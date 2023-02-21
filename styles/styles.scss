@@ -4,17 +4,18 @@ body{
     padding: 0;
 }
 
-h1 {
+h1, .title {
     color: #fff;
     transition: all .25s;
     font: {
         family: helvetica, sans-serif;
         size: 40px;
+        weight: bold;
     }
     letter-spacing: 1px;
 }
 
-p {
+.desc {
     color: #fff;
     font: {
         family: helvetica, sans-serif;
@@ -67,11 +68,6 @@ p {
     background-size: 200% 100%;
     background-position: 100%;
 
-    // -webkit-animation-fill-mode: both;
-    // animation-fill-mode: both;
-    // -webkit-animation-timing-function: ease-in-out;
-    // animation-timing-function: ease-out;
-
     transition: all .5s;
     animation-duration: .5s;
     -webkit-animation-duration: .5s;
@@ -118,8 +114,6 @@ p {
             @media screen and (max-width: 525px){
                 display: none;
             }
-            .link {
-            }
         }
         .mobile-nav-container {
             display: none;
@@ -144,22 +138,13 @@ p {
 .hero {
     margin-top: 150px;
     color: #fff;
+    @media screen and (max-width: 525px){
+        text-align: center;
+    }
     .wrap {
-        // max-width: 1000px;
         .title {
             @media screen and (max-width: 525px){
                 font-size: 30px;
-                transition: all .25s;
-            }
-        }
-        .pagination {
-            display: flex;
-            gap: 10px;
-            .dot {
-                background-color: #fff;
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
             }
         }
         .resume {
@@ -186,10 +171,8 @@ p {
                 }
             }
         }
-        .swiper {
-            margin: 40px 0;
-            color: #fff;
-            cursor: grab;
+        .swiper-desc {
+            margin: 40px 0 55px;
         }
     }
 }

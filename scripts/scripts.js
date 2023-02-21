@@ -1,25 +1,33 @@
 $(document).ready(function() {
 
 
-// CODE FOR ROTATING THE LAST WORD OF HTML TEXT
+    // CODE FOR ROTATING THE LAST WORD OF HTML TEXT
 
-    function rotateWords() {
-    wordsArray = ['disc golfer.', 'cat dad.', 'guitarist.', 'developer.'];
-    count = 0;
-    setInterval(function () {
-        count++;
-        $('.shuffle').fadeOut(750, function () {
-        $(this).text(wordsArray[count % wordsArray.length]).fadeIn(750);
-        });
-    }, 4000);
-    };
-    rotateWords();
+    // function rotateWords() {
+    //     wordsArray = ['disc golfer.', 'cat dad.', 'guitarist.', 'developer.'];
+    //     count = 0;
+    //     setInterval(function () {
+    //         count++;
+    //         $('.shuffle').fadeOut(750, function () {
+    //             $(this).text(wordsArray[count % wordsArray.length]).fadeIn(750);
+    //         });
+    //     }, 4000);
+    // };
 
-    const swiper = new Swiper('.swiper', {
+    // rotateWords()
+
+    const swiperDesc = new Swiper('.swiper', {
+        simulateTouch: false,
+        speed: 2000,
+        autoplay: {
+            delay: 4000,
+        },
+        slidesPerView: 1,
         loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-          },
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
     });
 
 })
