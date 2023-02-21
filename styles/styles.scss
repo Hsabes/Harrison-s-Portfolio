@@ -1,18 +1,7 @@
-body{
+body {
     background-color: #000;
     margin: 0;
     padding: 0;
-}
-
-h1, .title {
-    color: #fff;
-    transition: all .25s;
-    font: {
-        family: helvetica, sans-serif;
-        size: 40px;
-        weight: bold;
-    }
-    letter-spacing: 1px;
 }
 
 .desc {
@@ -22,7 +11,6 @@ h1, .title {
         size: 15px;
     }
     letter-spacing: 1px;
-    // text-transform: uppercase;
 }
 
 ::selection {
@@ -96,9 +84,13 @@ h1, .title {
     width: 95%;
     margin: 0 auto;
     padding: 0 20px;
+    box-sizing: border-box;
 }
 
-// Keyframes
+.shadow {
+    box-shadow: inset 0 -10px 25px -10px #ffffff50;
+    transition: all 1s;
+}
 
 // Styles
 
@@ -109,18 +101,15 @@ h1, .title {
         top: 0;
         max-width: none;
         padding: 0px;
-        border: 2px solid #ffffff25;
-        box-shadow: inset 0 0 20px #ffffff50;
         width: 100%;
-        box-sizing: border-box;
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(3px);
         z-index: 2;
+        transition: all 1s;
         .navigation-items {
             display: flex;
             justify-content: flex-end;
             gap: 25px;
             margin: 25px;
-
             @media screen and (max-width: 525px){
                 display: none;
             }
@@ -132,7 +121,8 @@ h1, .title {
                 justify-content: flex-end;
             }
             .lines {
-                margin: 20px 10px 0px;
+                cursor: pointer;
+                margin: 20px 20px 26px;
                 .line {
                     background-color: #fff;
                     height: 4px;
@@ -146,17 +136,25 @@ h1, .title {
 }
 
 .hero {
-    margin-top: 150px;
+    margin-top: 350px;
+
     color: #fff;
     @media screen and (max-width: 525px){
         text-align: center;
     }
     .wrap {
-        margin-bottom: 2000px;
 
+        margin-bottom: 2000px;
         .title {
+            color: #fff;
+            font: {
+                family: helvetica, sans-serif;
+                size: 40px;
+                weight: bold;
+            }
+            letter-spacing: 1px;
             @media screen and (max-width: 525px){
-                font-size: 30px;
+                font-size: 35px;
             }
         }
         .resume {
@@ -167,7 +165,6 @@ h1, .title {
             width: 100%;
             padding: 15px;
             &.btn{
-                
                 font: {
                     size: 13px;
                 }

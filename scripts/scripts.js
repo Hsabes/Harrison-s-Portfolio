@@ -16,6 +16,16 @@ $(document).ready(function() {
 
     // rotateWords()
 
+    $(window).on('scroll', () => {
+        $scroll = $(window).scrollTop();
+
+        if ($scroll > 20) {
+            $(".nav-wrap").addClass("shadow");
+        } else {
+            $(".nav-wrap").removeClass("shadow");
+        }
+    })
+
     const swiperDesc = new Swiper('.swiper', {
         simulateTouch: false,
         speed: 2000,

@@ -4,16 +4,6 @@ body {
   padding: 0;
 }
 
-h1, .title {
-  color: #fff;
-  -webkit-transition: all 0.25s;
-  transition: all 0.25s;
-  font-family: helvetica, sans-serif;
-  font-size: 40px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
 .desc {
   color: #fff;
   font-family: helvetica, sans-serif;
@@ -108,6 +98,15 @@ h1, .title {
   width: 95%;
   margin: 0 auto;
   padding: 0 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.shadow {
+  -webkit-box-shadow: inset 0 -10px 25px -10px rgba(255, 255, 255, 0.3137254902);
+          box-shadow: inset 0 -10px 25px -10px rgba(255, 255, 255, 0.3137254902);
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .navigation .wrap {
@@ -116,15 +115,12 @@ h1, .title {
   top: 0;
   max-width: none;
   padding: 0px;
-  border: 2px solid rgba(255, 255, 255, 0.1450980392);
-  -webkit-box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3137254902);
-          box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3137254902);
   width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   z-index: 2;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 .navigation .wrap .navigation-items {
   display: -webkit-box;
@@ -155,7 +151,8 @@ h1, .title {
   }
 }
 .navigation .wrap .mobile-nav-container .lines {
-  margin: 20px 10px 0px;
+  cursor: pointer;
+  margin: 20px 20px 26px;
 }
 .navigation .wrap .mobile-nav-container .lines .line {
   background-color: #fff;
@@ -166,7 +163,7 @@ h1, .title {
 }
 
 .hero {
-  margin-top: 150px;
+  margin-top: 350px;
   color: #fff;
 }
 @media screen and (max-width: 525px) {
@@ -177,9 +174,16 @@ h1, .title {
 .hero .wrap {
   margin-bottom: 2000px;
 }
+.hero .wrap .title {
+  color: #fff;
+  font-family: helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
 @media screen and (max-width: 525px) {
   .hero .wrap .title {
-    font-size: 30px;
+    font-size: 35px;
   }
 }
 .hero .wrap .resume {
