@@ -23,19 +23,27 @@ body {
 
 @keyframes bounce {
     0% {
-        -webkit-transform: translateY(0);
-        -ms-transform:     translateY(0);
-        transform:         translateY(0)
+        transform: translateY(0)
     }
     20% {
-        -webkit-transform: translateY(-5px);
-        -ms-transform:     translateY(-5px);
-        transform:         translateY(-5px)
+        transform: translateY(-5px)
     }
     80% {
-        -webkit-transform: translateY(-5px);
-        -ms-transform:     translateY(-5px);
-        transform:         translateY(-5px)
+        transform: translateY(-5px)
+    }
+}
+
+@keyframes expand {
+    2% {
+        width: 0%;
+        background: #ffffff00;
+    }
+    50% {
+        background: #ffffff;
+    }
+    100% {
+        width: 100%;
+        background: #ffffff00;
     }
 }
 
@@ -143,9 +151,9 @@ body {
         text-align: center;
     }
     .wrap {
-
-        margin-bottom: 2000px;
+        margin-bottom: 1000px;
         .title {
+            padding: 5px 0;
             color: #fff;
             font: {
                 family: helvetica, sans-serif;
@@ -155,6 +163,19 @@ body {
             letter-spacing: 1px;
             @media screen and (max-width: 525px){
                 font-size: 35px;
+            }
+            &:after {
+                content: '';
+                display: block;
+                margin: 15px auto;
+                height: 2px;
+                width: 0px;
+                background: #ffffff00;
+                animation-name: expand;
+                animation-duration: 18000ms;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+                animation-delay: 16000ms;
             }
         }
         .resume {
@@ -174,15 +195,17 @@ body {
                 outline-color: rgba(255, 255, 255, .5);
                 outline-offset: 0px;
                 text-shadow: none;
-                transition: all 1000ms;
+                transition: outline-color 500ms, background-position 500ms;
                 &:hover {
                     outline-color: rgba(255, 255, 255, 0);
                     outline-offset: 15px;
+                    outline-width: 2px;
+                    transition: all 1000ms;
                 }
             }
         }
         .swiper-desc {
-            margin: 40px 0 55px;
+            margin: 0 0 55px;
         }
     }
 }
