@@ -164,19 +164,31 @@ body {
             @media screen and (max-width: 525px){
                 font-size: 35px;
             }
-            &:after {
-                content: '';
-                display: block;
-                margin: 15px auto;
-                height: 2px;
-                width: 0px;
-                background: #ffffff00;
-                animation-name: expand;
-                animation-duration: 18000ms;
-                animation-iteration-count: infinite;
-                animation-timing-function: linear;
-                animation-delay: 16000ms;
-            }
+            // &:after {
+            //     content: '';
+                // display: block;
+                // margin: 15px auto;
+                // height: 2px;
+                // width: 0px;
+                // background: #ffffff00;
+                // animation-name: expand;
+                // animation-duration: 18000ms;
+                // animation-iteration-count: infinite;
+                // animation-timing-function: linear;
+                // animation-delay: 16000ms;
+            // }
+        }
+        .underline {
+            display: block;
+            margin: 15px auto 20px;
+            height: 2px;
+            width: 0px;
+            background: #ffffff00;
+            animation-name: expand;
+            animation-duration: 18000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-delay: 16000ms;
         }
         .resume {
             max-width: 160px; 
