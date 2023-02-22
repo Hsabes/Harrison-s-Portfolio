@@ -27,6 +27,46 @@ body {
   background: #3BCEFF; /* WebKit/Blink Browsers */
 }
 
+.title {
+  color: #fff;
+  font-family: helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+@media screen and (max-width: 525px) {
+  .title {
+    font-size: 35px;
+  }
+}
+
+.next {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.next .arrow-down {
+  margin-top: 150px;
+  height: 50px;
+  width: 50px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.next .arrow-up {
+  margin-top: 125px;
+  height: 50px;
+  width: 50px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
 @-webkit-keyframes bounce {
   0% {
     -webkit-transform: translateY(0);
@@ -189,7 +229,7 @@ body {
 }
 
 .hero {
-  margin-top: 350px;
+  padding: 41vh 0;
   color: #fff;
 }
 @media screen and (max-width: 525px) {
@@ -197,38 +237,22 @@ body {
     text-align: center;
   }
 }
-.hero .wrap {
-  margin-bottom: 1000px;
-}
-.hero .wrap .title {
-  padding: 5px 0;
-  color: #fff;
-  font-family: helvetica, sans-serif;
-  font-size: 40px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-@media screen and (max-width: 525px) {
-  .hero .wrap .title {
-    font-size: 35px;
-  }
-}
 .hero .wrap .underline {
   display: block;
-  margin: 15px auto 20px;
+  margin: 0px auto 35px;
   height: 2px;
   width: 0px;
   background: rgba(255, 255, 255, 0);
   -webkit-animation-name: expand;
           animation-name: expand;
-  -webkit-animation-duration: 18000ms;
-          animation-duration: 18000ms;
+  -webkit-animation-duration: 16s;
+          animation-duration: 16s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
-  -webkit-animation-delay: 16000ms;
-          animation-delay: 16000ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
 }
 .hero .wrap .resume {
   max-width: 160px;
@@ -257,6 +281,34 @@ body {
   -webkit-transition: all 1000ms;
   transition: all 1000ms;
 }
-.hero .wrap .swiper-desc {
+.hero .wrap .desc-container {
   margin: 0 0 55px;
+}
+
+.skills-grid .next {
+  margin-top: 500px;
+}
+.skills-grid .next .arrow-up {
+  margin-top: 100px;
+}
+.skills-grid .wrap {
+  padding: 5vh 0;
+}
+.skills-grid .wrap .buckets-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 5px;
+}
+.skills-grid .wrap .buckets-container .bucket {
+  display: inline-block;
+  border: 2px solid white;
+  width: 230px;
+  height: 230px;
+  margin: 1px 0;
 }

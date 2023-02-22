@@ -2,6 +2,7 @@ body {
     background-color: #000;
     margin: 0;
     padding: 0;
+    // overflow: hidden;
 }
 
 .desc {
@@ -19,7 +20,44 @@ body {
     background-size: 200% 100%;
     background-position: 100%;
     background: #3BCEFF; /* WebKit/Blink Browsers */
-  }
+}
+
+.title {
+    color: #fff;
+    font: {
+        family: helvetica, sans-serif;
+        size: 40px;
+        weight: bold;
+    }
+    letter-spacing: 1px;
+    @media screen and (max-width: 525px){
+        font-size: 35px;
+    }
+}
+
+.next {
+    display: flex;
+    justify-content: center;
+    .arrow-down {
+        margin-top: 150px;
+        height: 50px;
+        width: 50px;
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+        transform: rotate(45deg)
+    }
+    .arrow-up {
+        margin-top: 125px;
+        height: 50px;
+        width: 50px;
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+        transform: rotate(-135deg);
+        
+    }
+}
+
+// Bounces nav items
 
 @keyframes bounce {
     0% {
@@ -32,6 +70,8 @@ body {
         transform: translateY(-5px)
     }
 }
+
+// Expands the timer underneath title
 
 @keyframes expand {
     2% {
@@ -144,51 +184,23 @@ body {
 }
 
 .hero {
-    margin-top: 350px;
-
+    padding: 41vh 0;
     color: #fff;
     @media screen and (max-width: 525px){
         text-align: center;
     }
     .wrap {
-        margin-bottom: 1000px;
-        .title {
-            padding: 5px 0;
-            color: #fff;
-            font: {
-                family: helvetica, sans-serif;
-                size: 40px;
-                weight: bold;
-            }
-            letter-spacing: 1px;
-            @media screen and (max-width: 525px){
-                font-size: 35px;
-            }
-            // &:after {
-            //     content: '';
-                // display: block;
-                // margin: 15px auto;
-                // height: 2px;
-                // width: 0px;
-                // background: #ffffff00;
-                // animation-name: expand;
-                // animation-duration: 18000ms;
-                // animation-iteration-count: infinite;
-                // animation-timing-function: linear;
-                // animation-delay: 16000ms;
-            // }
-        }
         .underline {
             display: block;
-            margin: 15px auto 20px;
+            margin: 0px auto 35px;
             height: 2px;
             width: 0px;
             background: #ffffff00;
             animation-name: expand;
-            animation-duration: 18000ms;
+            animation-duration: 16s;
             animation-iteration-count: infinite;
             animation-timing-function: linear;
-            animation-delay: 16000ms;
+            animation-delay: 0ms;
         }
         .resume {
             max-width: 160px; 
@@ -216,8 +228,33 @@ body {
                 }
             }
         }
-        .swiper-desc {
+        .desc-container {
             margin: 0 0 55px;
+        }
+    }
+}
+
+.skills-grid {
+    .next {
+        margin-top: 500px;
+        .arrow-up {
+            margin-top: 100px;
+        }
+    }
+    .wrap {
+        padding: 5vh 0;
+        .buckets-container{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+            .bucket{
+                display: inline-block;
+                border: 2px solid white;
+                width: 230px;
+                height: 230px;
+                margin: 1px 0;
+            }
         }
     }
 }
