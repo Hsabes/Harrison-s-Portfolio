@@ -2,20 +2,20 @@ $(document).ready(function() {
 
     // CODE FOR ROTATING THE LAST WORD OF HTML TEXT
   function rotateTitle() {
-    let wordsArray = ["I'm a problem solver.", "I'm a disc golfer.", "I'm a guitarist.", "I'm a cat dad.", "I'm a developer"];
+    let titleArray = ["I'm a problem solver.", "I'm a disc golfer.", "I'm a guitarist.", "I'm a cat dad.", "I'm a developer"];
     let count = 0;
     setInterval(function () {
       count++;
       $('.shuffle-title').fadeOut(800, function () {
-        $(this).text(wordsArray[(count - 1) % wordsArray.length]).fadeIn(800);
+        $(this).text(titleArray[(count - 1) % titleArray.length]).fadeIn(800);
       });
     }, 20000);
   };
 
   rotateTitle();
 
-  function rotateDesc(){
-    let wordsArray = [
+function rotateDesc(){
+    let descArray = [
         "When I'm not working, I spend a fair amount of my free time either solving Kata on CodeWars or writing some of my own. I do this so I'm consistently improving my ability to write creative custom code for unique problems.",
         "In summer of 2022 my friend got me hooked on disc golfing. It's an incredible sport that facilitates social interaction, excercise, and an appreciation for the beauty of nature. My future plan is to travel the world and play some of the most famous courses around the globe.",
         "I have a bachelor's degree in Guitar from Berklee College of Music, and have been playing the guitar since elementary school. My favorite genres to listen to are gypsie jazz, blues, EDM, and instrumental rock. I love playing BB King style blues on my Fender Strat.",
@@ -24,26 +24,26 @@ $(document).ready(function() {
     ];
     let count = 0;
     setInterval(function () {
-      count++;
-      $('.shuffle-desc').fadeOut(800, function () {
-        $(this).text(wordsArray[(count - 1) % wordsArray.length]).fadeIn(800);
-      });
+        count++;
+        $('.shuffle-desc').fadeOut(800, function () {
+            $(this).text(descArray[(count - 1) % descArray.length]).fadeIn(800);
+        });
     }, 20000);
-  }
+}
 
-  rotateDesc()
+rotateDesc()
 
-  $(window).on('scroll', () => {
-      $scroll = $(window).scrollTop();
+$(window).on('scroll', () => {
+    $scroll = $(window).scrollTop();
 
-      if ($scroll > 0) {
-          $(".nav-wrap").addClass("shadow");
-      } else {
-          $(".nav-wrap").removeClass("shadow");
-      }
-  })
+    if ($scroll > 0) {
+        $(".nav-wrap").addClass("shadow");
+    } else {
+        $(".nav-wrap").removeClass("shadow");
+    }
+})
 
-  $(window).on('scroll', () => {
+$(window).on('scroll', () => {
     $scroll = $(window).scrollTop();
 
     if ($scroll > 0) {
