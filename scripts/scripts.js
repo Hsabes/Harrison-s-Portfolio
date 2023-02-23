@@ -6,10 +6,10 @@ $(document).ready(function() {
     let count = 0;
     setInterval(function () {
       count++;
-      $('.shuffle-title').fadeOut(400, function () {
-        $(this).text(wordsArray[(count - 1) % wordsArray.length]).fadeIn(400);
+      $('.shuffle-title').fadeOut(800, function () {
+        $(this).text(wordsArray[(count - 1) % wordsArray.length]).fadeIn(800);
       });
-    }, 16000);
+    }, 20000);
   };
 
   rotateTitle();
@@ -25,10 +25,10 @@ $(document).ready(function() {
     let count = 0;
     setInterval(function () {
       count++;
-      $('.shuffle-desc').fadeOut(400, function () {
-        $(this).text(wordsArray[(count - 1) % wordsArray.length]).fadeIn(400);
+      $('.shuffle-desc').fadeOut(800, function () {
+        $(this).text(wordsArray[(count - 1) % wordsArray.length]).fadeIn(800);
       });
-    }, 16000);
+    }, 20000);
   }
 
   rotateDesc()
@@ -54,27 +54,39 @@ $(document).ready(function() {
 })
 
   function animateScroll(){
-    $(".to-grid").on('click', function() {
-      $(".to-grid").animate({
-        opacity: 0
-      }, 1000)
-      $(".to-intro").animate({
-        opacity: 100
-      }, 1000)
-      $('html,body').animate({
+    $(".to-grid").on('click', function() { // ON DOWN ARROW CLICK
+    //   $(".to-grid").animate({ // FADE OUT DOWN ARROW
+    //     opacity: 0
+    //   }, 1000)
+    //   $(".to-intro").css({ // FADE IN UP ARROW
+    //     opacity: 100
+    //   })
+      $('.skills-grid').css({
+        opacity: 100,
+      })
+      $('.hero').animate({ // FADE OUT HERO SECTION
+        opacity: 0,
+      }, 500)
+      $('html,body').animate({ // SCROLL DOWN TO GRID
         scrollTop: $(".skills-grid").offset().top
-      }, 3000);
+      }, 1500);
     });
-    $(".to-intro").on('click', function() {
-      $(".to-intro").animate({
-        opacity: 0
-      }, 1000)
-      $(".to-grid").animate({
-        opacity: 100
-      }, 1000)
-      $('html,body').animate({
+    $(".to-intro").on('click', function() { // ON UP ARROW CLICK
+    //   $(".to-intro").animate({ // FADE OUT UP ARROW
+    //     opacity: 0
+    //   }, 1000)
+    //   $(".to-grid").css({ // FADE IN DOWN ARROW
+    //     opacity: 100
+    //   })
+      $('.skills-grid').animate({
+        opacity: 0,
+      }, 500)
+      $('.hero').css({ // FADE IN HERO SECTION
+        opacity: 100,
+      })
+      $('html,body').animate({ // SCROLL UP TO NAV
         scrollTop: $(".navigation").offset().top
-      }, 4000);
+      }, 1500);
     });
 
   }
