@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     // CODE FOR ROTATING THE LAST WORD OF HTML TEXT
   function rotateTitle() {
-    let wordsArray = ['problem solver.', 'disc golfer.', 'guitarist.', 'cat dad.', 'developer.'];
+    let wordsArray = ["I'm a problem solver.", "I'm a disc golfer.", "I'm a guitarist.", "I'm a cat dad.", "I'm a developer"];
     let count = 0;
     setInterval(function () {
       count++;
@@ -16,10 +16,10 @@ $(document).ready(function() {
 
   function rotateDesc(){
     let wordsArray = [
-        "When I'm not working, I spend a fair amount of my free time either solving Kata on CodeWars or writing some of my own. I do this so I'm constantly improving my ability to write creative custom code for unique problems.",
+        "When I'm not working, I spend a fair amount of my free time either solving Kata on CodeWars or writing some of my own. I do this so I'm consistently improving my ability to write creative custom code for unique problems.",
         "In summer of 2022 my friend got me hooked on disc golfing. It's an incredible sport that facilitates social interaction, excercise, and an appreciation for the beauty of nature. My future plan is to travel the world and play some of the most famous courses around the globe.",
-        '3Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, est ipsa quibusdam cupiditate corrupti earum corporis eius accusantium doloribus. Exercitationem dignissimos veritatis recusandae repellendus ad!',
-        '4Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, est ipsa quibusdam cupiditate corrupti earum corporis eius accusantium doloribus. Exercitationem dignissimos veritatis recusandae repellendus ad!',
+        "I have a bachelor's degree in Guitar from Berklee College of Music, and have been playing the guitar since elementary school. My favorite genres to listen to are gypsie jazz, blues, EDM, and instrumental rock. I love playing BB King style blues on my Fender Strat.",
+        "I have a standard issue cat named Smitty who is currently four years old and never does anything wrong. He loves playing with wand toys, crinkling plastic (particularly at 3AM), and crab walking as an attempt to intimidate the vacuum cleaner.",
         "I started coding in May of 2022 when I started studying at Flatiron School's Software Engineering program. I have a passion for finding creative solutions and I consistently exercise this passion through algorithms and project building. View my resume below."
     ];
     let count = 0;
@@ -53,40 +53,28 @@ $(document).ready(function() {
     }
 })
 
-  function animateScroll(){
+function animateScroll(){
     $(".to-grid").on('click', function() { // ON DOWN ARROW CLICK
-    //   $(".to-grid").animate({ // FADE OUT DOWN ARROW
-    //     opacity: 0
-    //   }, 1000)
-    //   $(".to-intro").css({ // FADE IN UP ARROW
-    //     opacity: 100
-    //   })
-      $('.skills-grid').css({
-        opacity: 100,
-      })
-      $('.hero').animate({ // FADE OUT HERO SECTION
-        opacity: 0,
-      }, 500)
-      $('html,body').animate({ // SCROLL DOWN TO GRID
-        scrollTop: $(".skills-grid").offset().top
-      }, 1500);
+        $('.hero').animate({ // FADE OUT HERO SECTION
+            opacity: 0,
+        }, 500)
+        $('.skills-grid').css({ // SHOW SKILLS GRID
+            opacity: 100,
+        })
+        $('html,body').animate({ // SCROLL DOWN TO GRID
+            scrollTop: $(".skills-grid").offset().top
+        }, 1500);
     });
     $(".to-intro").on('click', function() { // ON UP ARROW CLICK
-    //   $(".to-intro").animate({ // FADE OUT UP ARROW
-    //     opacity: 0
-    //   }, 1000)
-    //   $(".to-grid").css({ // FADE IN DOWN ARROW
-    //     opacity: 100
-    //   })
-      $('.skills-grid').animate({
-        opacity: 0,
-      }, 500)
-      $('.hero').css({ // FADE IN HERO SECTION
-        opacity: 100,
-      })
-      $('html,body').animate({ // SCROLL UP TO NAV
-        scrollTop: $(".navigation").offset().top
-      }, 1500);
+        $('.hero').css({ // FADE IN HERO SECTION
+            opacity: 100,
+        })
+        $('.skills-grid').animate({ // FADE OUT SKILLS GRID
+            opacity: 0,
+        }, 500)
+        $('html,body').animate({ // SCROLL UP TO NAV
+            scrollTop: $(".navigation").offset().top
+        }, 1500);
     });
 
   }

@@ -22,7 +22,7 @@ body {
     background: #3BCEFF; /* WebKit/Blink Browsers */
 }
 
-.title {
+.title, .shuffle-title {
     color: #fff;
     font: {
         family: helvetica, sans-serif;
@@ -148,7 +148,6 @@ body {
     flex-direction: column;
     justify-content: center;
     .wrap {
-
         background-color: #00000050;
         position: fixed;
         top: 0;
@@ -197,6 +196,9 @@ body {
         .arrow-down {
             position: absolute;
             top: 725px;
+        }
+        .shuffle-title {
+            margin-top: -22px;
         }
         .underline {
             display: block;

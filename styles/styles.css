@@ -28,7 +28,7 @@ body {
   background: #3BCEFF; /* WebKit/Blink Browsers */
 }
 
-.title {
+.title, .shuffle-title {
   color: #fff;
   font-family: helvetica, sans-serif;
   font-size: 40px;
@@ -36,7 +36,7 @@ body {
   letter-spacing: 1px;
 }
 @media screen and (max-width: 625px) {
-  .title {
+  .title, .shuffle-title {
     font-size: 25px;
   }
 }
@@ -253,6 +253,9 @@ body {
 .hero .wrap .arrow-down {
   position: absolute;
   top: 725px;
+}
+.hero .wrap .shuffle-title {
+  margin-top: -22px;
 }
 .hero .wrap .underline {
   display: block;
