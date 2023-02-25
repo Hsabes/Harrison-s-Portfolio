@@ -11,6 +11,12 @@ body {
   font-size: 15px;
   letter-spacing: 1px;
 }
+@media screen and (max-width: 525px) {
+  .desc {
+    font-size: 12px;
+    letter-spacing: 0px;
+  }
+}
 
 ::-moz-selection {
   background-clip: text;
@@ -57,6 +63,11 @@ body {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.next .arrow-down:hover {
+  border-color: #3BCEFF;
 }
 .next .arrow-up {
   margin-top: 125px;
@@ -67,6 +78,11 @@ body {
   -webkit-transform: rotate(-135deg);
           transform: rotate(-135deg);
   cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.next .arrow-up:hover {
+  border-color: #3BCEFF;
 }
 
 @-webkit-keyframes bounce {
@@ -124,6 +140,17 @@ body {
     background: rgba(255, 255, 255, 0);
   }
 }
+.rotatePos {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.rotateNeg {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin-top: -4px !important;
+}
+
 .link {
   font-family: helvetica, sans-serif;
   font-size: 20px;
@@ -139,14 +166,13 @@ body {
   background-position: 100%;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  animation-duration: 0.5s;
   -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
 }
 .link:hover {
   background-position: 0 100%;
   -webkit-animation-name: bounce;
           animation-name: bounce;
-  -moz-animation-name: bounce;
 }
 
 .mobile-link {
@@ -233,6 +259,8 @@ body {
 .navigation .wrap .mobile-nav-container .lines {
   cursor: pointer;
   margin: 20px 20px 26px;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 .navigation .wrap .mobile-nav-container .lines .line {
   background-color: #fff;
@@ -252,7 +280,7 @@ body {
 }
 .hero .wrap .arrow-down {
   position: absolute;
-  top: 725px;
+  top: 575px;
 }
 .hero .wrap .shuffle-title {
   margin-top: -22px;

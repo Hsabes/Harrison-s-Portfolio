@@ -9,7 +9,7 @@ $(document).ready(function() {
       $('.shuffle-title').fadeOut(800, function () {
         $(this).text(titleArray[(count - 1) % titleArray.length]).fadeIn(800);
       });
-    }, 2000);
+    }, 20000);
   };
 
   rotateTitle();
@@ -28,7 +28,7 @@ function rotateDesc(){
         $('.shuffle-desc').fadeOut(800, function () {
             $(this).text(descArray[(count - 1) % descArray.length]).fadeIn(800);
         });
-    }, 2000);
+    }, 20000);
 }
 
 rotateDesc()
@@ -93,8 +93,18 @@ function animateScroll(){
         }, 750);
     });
 
-  }
+}
 
-  animateScroll()
+animateScroll()
+
+function animateNavLines(){
+    $('.lines').on('click', () => {
+        $('.one').toggleClass("rotatePos");
+        $('.two').toggleClass("rotateNeg");
+        $('.three').toggle();
+    })
+}
+
+animateNavLines()
 
 })
