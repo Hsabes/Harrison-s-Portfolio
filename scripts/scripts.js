@@ -107,32 +107,55 @@ function animateNavLines(){
 
 animateNavLines()
 
-function hideElements(array, index){
-    // return element.style.borderColor = 'yellow'
-    console.log(array)
+// On exit click, set displayed el back to original height, and show the remaining divs
+
+function hideElements(bucketTarget, buckets){
+
+    // Hides all boxes, ignoring the box that was clicked
+    let bucketsToHide = buckets.filter((bucket) => buckets.indexOf(bucket) !== buckets.indexOf(bucketTarget))
+
+    bucketsToHide.map((bucket) => {
+        return bucket.style.display = 'none'
+    })
+
+    // Styles the target box
+    bucketTarget.style.cssText = 'width: 100%; height: 292px; background-color: #fff; cursor: default;'
+    bucketTarget.children[0].style.display = 'none' // The image
+    bucketTarget.children[1].style.display = 'block' // Container for the description
+    setTimeout(() => {
+        Array.from(bucketTarget.children[1].children).map((element) => {
+            element.style.opacity = '100'
+        })
+    }, 1000)
+
+    bucketTarget.children[1].children[2].addEventListener('click', (e) => {
+        e.stopPropagation()
+
+        bucketTarget.style.cssText = 'width: 125px; height: 125px; background-color: none; cursor: pointer;'
+        bucketTarget.children[0].style.display = 'inline'
+        bucketTarget.children[1].style.display = 'none'
+
+        bucketsToHide.map((bucket) => {
+            bucket.style.display = 'block'
+            bucket.children[0].style.cssText = 'width: 100%; height: 100%;'
+        })
+
+    })
+
 }
 
-// bucket[i + 1 + 4 + 5]
-
 function showDetails(){
-    let buckets = Array.from(document.getElementsByClassName("bucket"));
-    buckets.map((bucket, index) => {
+    let buckets = Array.from($('.bucket'))
+    buckets.map((bucket) => {
         bucket.addEventListener('click', () => {
-            switch (index){
-                case 0: return hideElements(buckets, index); break;
-                case 1: console.log(i - 1, i + 3, i + 4); break;
-                case 2: console.log(i); break;
-                case 3: console.log(i); break;
-                case 4: console.log(i - 4, i - 3, i + 1); break;
-                case 5: console.log(i - 1, i - 4, i - 5); break;
-                case 6: console.log(i); break;
-                case 7: console.log(i); break;
-                default: console.log('invalid element'); break;
-            }
+            return hideElements(bucket, buckets)
         })
     })
 }
 
 showDetails();
+
+
+
 
 })
