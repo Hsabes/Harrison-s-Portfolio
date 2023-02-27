@@ -107,4 +107,32 @@ function animateNavLines(){
 
 animateNavLines()
 
+function hideElements(array, index){
+    // return element.style.borderColor = 'yellow'
+    console.log(array)
+}
+
+// bucket[i + 1 + 4 + 5]
+
+function showDetails(){
+    let buckets = Array.from(document.getElementsByClassName("bucket"));
+    buckets.map((bucket, index) => {
+        bucket.addEventListener('click', () => {
+            switch (index){
+                case 0: return hideElements(buckets, index); break;
+                case 1: console.log(i - 1, i + 3, i + 4); break;
+                case 2: console.log(i); break;
+                case 3: console.log(i); break;
+                case 4: console.log(i - 4, i - 3, i + 1); break;
+                case 5: console.log(i - 1, i - 4, i - 5); break;
+                case 6: console.log(i); break;
+                case 7: console.log(i); break;
+                default: console.log('invalid element'); break;
+            }
+        })
+    })
+}
+
+showDetails();
+
 })

@@ -180,8 +180,8 @@ body {
   background: linear-gradient(to right, #3BCEFF, #3BCEFF 50%, #fff 50%);
   background-size: 200% 100%;
   background-position: 100%;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
 }
 .mobile-link:hover {
   background-position: 0 100%;
@@ -276,7 +276,7 @@ body {
 .hero .wrap {
   position: relative;
   color: #fff;
-  padding: 20vh 50px 75vh;
+  padding: 15vh 50px 75vh;
 }
 .hero .wrap .arrow-down {
   position: absolute;
@@ -337,17 +337,6 @@ body {
   position: relative;
   top: 1250px;
   margin-bottom: 1500px;
-}
-.skills-grid .modal {
-  position: relative;
-  display: block;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 1180px;
-  padding: 20px;
-  margin-top: 200px;
-  background-color: rgba(255, 255, 255, 0.3137254902);
 }
 .skills-grid .container {
   display: -webkit-box;
