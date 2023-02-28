@@ -114,27 +114,37 @@ function hideElements(bucketTarget, buckets){
 
     // Hides all boxes, ignoring the box that was clicked
     let bucketsToHide = buckets.filter((bucket) => buckets.indexOf(bucket) !== buckets.indexOf(bucketTarget))
-
+    
     bucketsToHide.map((bucket) => {
         return bucket.style.display = 'none'
     })
 
+    // Variables for styling target box elements
+
+    let targetImg = bucketTarget.children[0];
+    let targetContainer = bucketTarget.children[1];
+    let targetChildren = Array.from(targetContainer.children);
+
+
     // Styles the target box
-    bucketTarget.style.cssText = 'width: 100%; height: 292px; background-color: #fff; cursor: default; transition: .5s;'
-    bucketTarget.children[0].style.display = 'none' // The image
-    bucketTarget.children[1].style.display = 'block' // Container for the description
+    bucketTarget.style.cssText = 'width: 100%; height: 292px; background-color: #fff; cursor: default;'
+    targetImg.style.display = 'none' // Original image
+    targetContainer.style.display = 'block' // Container for the title/desc/exit
     setTimeout(() => {
-        Array.from(bucketTarget.children[1].children).map((element) => {
+        targetChildren.map((element) => {
             element.style.opacity = '100'
         })
     }, 750)
 
-    bucketTarget.children[1].children[2].addEventListener('click', (e) => {
+    targetContainer.children[2].addEventListener('click', (e) => {
         e.stopPropagation()
 
         bucketTarget.style.cssText = ''
-        bucketTarget.children[0].style.display = 'inline'
-        bucketTarget.children[1].style.display = 'none'
+        targetImg.style.display = 'inline'
+        targetContainer.style.display = 'none'
+        targetChildren.map((element) => {
+            element.style.opacity = '0'
+        })
 
         bucketsToHide.map((bucket) => {
             bucket.style.display = 'block'

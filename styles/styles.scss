@@ -35,7 +35,7 @@ body {
     }
     letter-spacing: 1px;
     @media screen and (max-width: 625px){
-        font-size: 25px;
+        font-size: 20px;
     }
 }
 
@@ -224,7 +224,7 @@ body {
             top: 575px;
         }
         .shuffle-title {
-            margin-top: -22px;
+            margin-top: -15px;
         }
         .underline {
             display: block;
@@ -346,6 +346,7 @@ body {
                             transition: opacity 1s;
                         }
                         .exit {
+                            bottom: 0;
                             display: inline;
                             color: #000;
                             opacity: 0;
@@ -353,8 +354,20 @@ body {
                             text-transform: uppercase;
                             transition: opacity 1s;
                             cursor: pointer;
-                        }
+                            background: linear-gradient(to right, #3BCEFF, #3BCEFF 50%, #000 50%);
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            background-size: 200% 100%;
+                            background-position: 100%;
 
+                            transition: all .5s;
+                            animation-duration: .5s;
+
+                            &:hover {
+                                background-position: 0 100%;
+                            }
+                        }
                     }
                 }
             }

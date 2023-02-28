@@ -43,7 +43,7 @@ body {
 }
 @media screen and (max-width: 625px) {
   .title, .shuffle-title {
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 
@@ -290,7 +290,7 @@ body {
   top: 575px;
 }
 .hero .wrap .shuffle-title {
-  margin-top: -22px;
+  margin-top: -15px;
 }
 .hero .wrap .underline {
   display: block;
@@ -439,6 +439,7 @@ body {
   transition: opacity 1s;
 }
 .skills-grid .container .wrap .buckets-container .bucket .bucket-info .exit {
+  bottom: 0;
   display: inline;
   color: #000;
   opacity: 0;
@@ -447,4 +448,18 @@ body {
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
   cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, from(#3BCEFF), color-stop(50%, #3BCEFF), color-stop(50%, #000));
+  background: linear-gradient(to right, #3BCEFF, #3BCEFF 50%, #000 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+.skills-grid .container .wrap .buckets-container .bucket .bucket-info .exit:hover {
+  background-position: 0 100%;
 }
