@@ -395,8 +395,6 @@ body {
   border: 2px solid #ffffff;
   width: 125px;
   height: 125px;
-  -webkit-transition: all 0.75s;
-  transition: all 0.75s;
 }
 @media screen and (max-width: 820px) {
   .skills-grid .container .wrap .buckets-container .bucket {

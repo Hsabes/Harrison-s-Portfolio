@@ -109,6 +109,7 @@ animateNavLines()
 
 // On exit click, set displayed el back to original height, and show the remaining divs
 
+
 function hideElements(bucketTarget, buckets){
 
     // Hides all boxes, ignoring the box that was clicked
@@ -119,19 +120,19 @@ function hideElements(bucketTarget, buckets){
     })
 
     // Styles the target box
-    bucketTarget.style.cssText = 'width: 100%; height: 292px; background-color: #fff; cursor: default;'
+    bucketTarget.style.cssText = 'width: 100%; height: 292px; background-color: #fff; cursor: default; transition: .5s;'
     bucketTarget.children[0].style.display = 'none' // The image
     bucketTarget.children[1].style.display = 'block' // Container for the description
     setTimeout(() => {
         Array.from(bucketTarget.children[1].children).map((element) => {
             element.style.opacity = '100'
         })
-    }, 1000)
+    }, 750)
 
     bucketTarget.children[1].children[2].addEventListener('click', (e) => {
         e.stopPropagation()
 
-        bucketTarget.style.cssText = 'width: 125px; height: 125px; background-color: none; cursor: pointer;'
+        bucketTarget.style.cssText = ''
         bucketTarget.children[0].style.display = 'inline'
         bucketTarget.children[1].style.display = 'none'
 
