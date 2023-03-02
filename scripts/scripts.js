@@ -60,7 +60,7 @@ $(document).ready(function() {
     function animateScroll(){
         // ARROWS
         $(".to-grid").on('click', function() { // ANY DIRECTION ARROW THAT GOES TO SKILLS
-            $('.hero, .projects-sect').animate({ // FADE OUT ANYTHING THAT ISN'T SKILLS
+            $('.hero, .projects-sect, .contact-sect').animate({ // FADE OUT ANYTHING THAT ISN'T SKILLS
                 opacity: 0,
             }, 500)
             $('.skills-grid').css({ // SHOW SKILLS GRID
@@ -71,7 +71,7 @@ $(document).ready(function() {
             }, isUpOrDown($(this)));
         });
         $(".to-projects").on('click', function() { // ANY DIRECTION ARROW THAT GOES TO PROJECTS
-            $('.skills-grid').animate({ // FADE OUT ANYTHING THAT ISNT PROJECTS
+            $('.skills-grid, .contact-sect, .hero').animate({ // FADE OUT ANYTHING THAT ISNT PROJECTS
                 opacity: 0,
             }, 500)
             $('.projects-sect').css({ // SHOW PROJECTS
@@ -82,7 +82,7 @@ $(document).ready(function() {
             }, isUpOrDown($(this)));
         });
         $(".to-intro").on('click', function() { // ANY DIRECTION ARROW THAT GOES TO INTRO
-            $('.skills-grid, .projects-sect').animate({ // FADE OUT ANYTHING THAT ISNT HERO SECTION
+            $('.skills-grid, .projects-sect, .contact-sect').animate({ // FADE OUT ANYTHING THAT ISNT HERO SECTION
                 opacity: 0,
             }, 500);
             $('.hero').css({ // SHOW HERO
@@ -92,10 +92,21 @@ $(document).ready(function() {
                 scrollTop: $(".navigation").offset().top
             }, isUpOrDown($(this)));
         });
+        $(".to-contact").on('click', function() { // ANY DIRECTION ARROW THAT GOES TO CONTACT
+            $('.skills-grid, .projects-sect, .hero').animate({ // FADE OUT ANYTHING THAT ISNT CONTACT SECTION
+                opacity: 0,
+            }, 500);
+            $('.contact-sect').css({ // SHOW CONTACT
+                opacity: 100,
+            });
+            $('html,body').animate({ // SCROLL TO CONTACT
+                scrollTop: $(".contact-sect").offset().top
+            }, isUpOrDown($(this)));
+        });
 
         // NAVIGATION ITEMS
         $(".about-me").on('click', function() { // GO TO ABOUT ME
-            $('.skills-grid, .projects-sect').animate({ // FADE OUT EVERYTHING THAT ISNT THE HERO
+            $('.skills-grid, .projects-sect, .contact-sect').animate({ // FADE OUT EVERYTHING THAT ISNT THE HERO
                 opacity: 0,
             }, 250);
             $('.hero').css({ // SHOW HERO
@@ -106,7 +117,7 @@ $(document).ready(function() {
             }, 750);
         });
         $(".skills").on('click', function() { // GO TO SKILLS
-            $('.hero, .projects-sect').animate({ // FADE OUT EVERYTHING THAT ISNT SKILLS
+            $('.hero, .projects-sect, .contact-sect').animate({ // FADE OUT EVERYTHING THAT ISNT SKILLS
                 opacity: 0,
             }, 250);
             $('.skills-grid').css({ // SHOW SKILLS GRID
@@ -117,7 +128,7 @@ $(document).ready(function() {
             }, 750);
         });
         $(".projects").on('click', function() { // GO TO PROJECTS SECTION
-            $('.hero, .skills-grid').animate({ // FADE OUT EVERYTHING THAT ISN'T PROJECTS SECTION
+            $('.hero, .skills-grid, .contact-sect').animate({ // FADE OUT EVERYTHING THAT ISN'T PROJECTS SECTION
                 opacity: 0,
             }, 250);
             $('.projects-sect').css({ // SHOW PROJECTS SECTION
@@ -125,6 +136,17 @@ $(document).ready(function() {
             })
             $('html,body').animate({ // SCROLL TO HERO SECTION
                 scrollTop: $(".projects-sect").offset().top
+            }, 750);
+        });
+        $(".contact").on('click', function() { // GO TO CONTACT SECTION
+            $('.hero, .skills-grid, .projects-sect').animate({ // FADE OUT EVERYTHING THAT ISN'T CONTACT SECTION
+                opacity: 0,
+            }, 250);
+            $('.contact-sect').css({ // SHOW CONTACT SECTION
+                opacity: 100,
+            })
+            $('html,body').animate({ // SCROLL TO CONTACT SECTION
+                scrollTop: $(".contact-sect").offset().top
             }, 750);
         });
     };

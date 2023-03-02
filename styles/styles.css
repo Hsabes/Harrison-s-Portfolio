@@ -340,7 +340,7 @@ body {
 
 .skills-grid {
   position: relative;
-  top: 200px;
+  top: 400px;
 }
 .skills-grid .container {
   display: -webkit-box;
@@ -482,6 +482,13 @@ body {
 
 .projects-sect {
   position: relative;
-  top: 1200px;
-  margin-bottom: 2500px;
+  top: 1600px;
+  text-align: center;
+}
+
+.contact-sect {
+  position: relative;
+  top: 2800px;
+  text-align: center;
+  margin-bottom: 5500px;
 }
