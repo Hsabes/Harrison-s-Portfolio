@@ -277,7 +277,6 @@ body {
 .skills-grid {
     position: relative;
     top: 200px;
-    margin-bottom: 2500px;
     .container {
         display: flex;
         flex-direction: column;
@@ -375,4 +374,10 @@ body {
             }
         }
     }
+}
+
+.projects-sect {
+    position: relative;
+    top: 1200px;
+    margin-bottom: 2500px;
 }

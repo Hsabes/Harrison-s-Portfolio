@@ -341,7 +341,6 @@ body {
 .skills-grid {
   position: relative;
   top: 200px;
-  margin-bottom: 2500px;
 }
 .skills-grid .container {
   display: -webkit-box;
@@ -473,4 +472,10 @@ body {
 }
 .skills-grid .container .wrap .buckets-container .bucket .bucket-info .exit:hover {
   background-position: 0 100%;
+}
+
+.projects-sect {
+  position: relative;
+  top: 1200px;
+  margin-bottom: 2500px;
 }

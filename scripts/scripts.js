@@ -52,48 +52,81 @@ $(document).ready(function() {
             $(".nav-wrap").removeClass("shadow");
         }
     })
+
+    function isUpOrDown(element){ // Adjusts scroll speed if use goes up or down
+        return element.hasClass('arrow-up') ? 1000 : 2000;
+    }
     
     function animateScroll(){
-        // Handles navigating using nav menu or up/down arrows
-        $(".to-grid").on('click', function() { // ON DOWN ARROW CLICK TO GRID
-            $('.hero').animate({ // FADE OUT HERO SECTION
+        // ARROWS
+        $(".to-grid").on('click', function() { // ANY DIRECTION ARROW THAT GOES TO SKILLS
+            $('.hero, .projects-sect').animate({ // FADE OUT ANYTHING THAT ISN'T SKILLS
                 opacity: 0,
             }, 500)
             $('.skills-grid').css({ // SHOW SKILLS GRID
                 opacity: 100,
             });
-            $('html,body').animate({ // SCROLL DOWN TO GRID
+            $('html,body').animate({ // SCROLL TO SKILLS
                 scrollTop: $(".skills-grid").offset().top
-            }, 2000);
+            }, isUpOrDown($(this)));
         });
-        $(".to-intro").on('click', function() { // ON UP ARROW CLICK TO INTRO
-            $('.hero').css({ // FADE IN HERO SECTION
+        $(".to-projects").on('click', function() { // ANY DIRECTION ARROW THAT GOES TO PROJECTS
+            $('.skills-grid').animate({ // FADE OUT ANYTHING THAT ISNT PROJECTS
+                opacity: 0,
+            }, 500)
+            $('.projects-sect').css({ // SHOW PROJECTS
                 opacity: 100,
             });
-            $('.skills-grid').animate({ // FADE OUT SKILLS GRID
+            $('html,body').animate({ // SCROLL TO PROJECTS
+                scrollTop: $(".projects-sect").offset().top
+            }, isUpOrDown($(this)));
+        });
+        $(".to-intro").on('click', function() { // ANY DIRECTION ARROW THAT GOES TO INTRO
+            $('.skills-grid, .projects-sect').animate({ // FADE OUT ANYTHING THAT ISNT HERO SECTION
                 opacity: 0,
             }, 500);
-            $('html,body').animate({ // SCROLL UP TO NAV
+            $('.hero').css({ // SHOW HERO
+                opacity: 100,
+            });
+            $('html,body').animate({ // SCROLL TO HERO
                 scrollTop: $(".navigation").offset().top
-            }, 1500);
+            }, isUpOrDown($(this)));
         });
-        $(".about-me").on('click', function() { // ON UP ARROW CLICK
-            $('.hero').css({ // FADE IN HERO SECTION
+
+        // NAVIGATION ITEMS
+        $(".about-me").on('click', function() { // GO TO ABOUT ME
+            $('.skills-grid, .projects-sect').animate({ // FADE OUT EVERYTHING THAT ISNT THE HERO
+                opacity: 0,
+            }, 250);
+            $('.hero').css({ // SHOW HERO
                 opacity: 100,
             })
-            $('html,body').animate({ // SCROLL UP TO NAV
+            $('html,body').animate({ // SCROLL TO HERO
                 scrollTop: $(".hero").offset().top
             }, 750);
         });
-        $(".skills").on('click', function() { // ON UP ARROW CLICK
-            $('.skills-grid').css({ // FADE IN HERO SECTION
+        $(".skills").on('click', function() { // GO TO SKILLS
+            $('.hero, .projects-sect').animate({ // FADE OUT EVERYTHING THAT ISNT SKILLS
+                opacity: 0,
+            }, 250);
+            $('.skills-grid').css({ // SHOW SKILLS GRID
                 opacity: 100,
             });
-            $('html,body').animate({ // SCROLL UP TO NAV
+            $('html,body').animate({ // SCROLL TO SKILLS GRID
                 scrollTop: $(".skills-grid").offset().top
             }, 750);
         });
-    
+        $(".projects").on('click', function() { // GO TO PROJECTS SECTION
+            $('.hero, .skills-grid').animate({ // FADE OUT EVERYTHING THAT ISN'T PROJECTS SECTION
+                opacity: 0,
+            }, 250);
+            $('.projects-sect').css({ // SHOW PROJECTS SECTION
+                opacity: 100,
+            })
+            $('html,body').animate({ // SCROLL TO HERO SECTION
+                scrollTop: $(".projects-sect").offset().top
+            }, 750);
+        });
     };
     
     animateScroll()
