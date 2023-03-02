@@ -33,24 +33,8 @@ $(document).ready(function() {
     
     rotateDesc()
     
-    $(window).on('scroll', () => {
-        $scroll = $(window).scrollTop();
-    
-        if ($scroll > 0) {
-            $(".nav-wrap").addClass("shadow");
-        } else {
-            $(".nav-wrap").removeClass("shadow");
-        }
-    })
-    
-    $(window).on('scroll', () => {
-        $scroll = $(window).scrollTop();
-    
-        if ($scroll > 0) {
-            $(".nav-wrap").addClass("shadow");
-        } else {
-            $(".nav-wrap").removeClass("shadow");
-        }
+    $(window).on('scroll', () => { // Applies nav bar styling when user navigates beyond hero
+        return $(window).scrollTop() > 10 ? $(".nav-wrap").addClass("shadow") : $(".nav-wrap").removeClass("shadow");
     })
 
     function isUpOrDown(element){ // Adjusts scroll speed if use goes up or down
@@ -113,7 +97,7 @@ $(document).ready(function() {
                 opacity: 100,
             })
             $('html,body').animate({ // SCROLL TO HERO
-                scrollTop: $(".hero").offset().top
+                scrollTop: $("body").offset().top
             }, 750);
         });
         $(".skills").on('click', function() { // GO TO SKILLS
@@ -157,7 +141,7 @@ $(document).ready(function() {
         $('.lines').on('click', () => {
             $('.one').toggleClass("rotatePos");
             $('.two').toggleClass("rotateNeg");
-            $('.three').toggle();
+            $('.three').fadeToggle(200);
         });
     };
     
