@@ -182,16 +182,16 @@ $(document).ready(function() {
                 element.style.opacity = '0';
             })
 
-            bucketsToHide.map((bucket) => {
+            bucketsToHide.map((bucket, i) => {
                 bucket.style.cssText = '';
                 bucket.style.opacity = '0';
             });
 
-            let count = 0;
-            setInterval(function () {
-                count++;
-                bucketsToHide[count - 1].style.cssText = 'opacity: 100; transition: box-shadow .5s, opacity 1s;'
-            }, 100);
+            bucketsToHide.forEach((bucket, i) => {
+                setInterval(() => {
+                    bucket.style.cssText = 'opacity: 100; transition: box-shadow .5s, opacity 1s;'
+                }, 100 * i)
+            })
 
     
         }
