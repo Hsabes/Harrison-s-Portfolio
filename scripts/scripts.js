@@ -181,14 +181,18 @@ $(document).ready(function() {
             targetChildren.map((element) => {
                 element.style.opacity = '0';
             })
-    
+
             bucketsToHide.map((bucket) => {
                 bucket.style.cssText = '';
                 bucket.style.opacity = '0';
-                setTimeout(() => {
-                    bucket.style.cssText = 'opacity: 100; transition: box-shadow .5s, opacity 1s;'; // Delay and transition bucket appearance
-                }, 500);
             });
+
+            let count = 0;
+            setInterval(function () {
+                count++;
+                bucketsToHide[count - 1].style.cssText = 'opacity: 100; transition: box-shadow .5s, opacity 1s;'
+            }, 100);
+
     
         }
     
