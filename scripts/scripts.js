@@ -182,15 +182,15 @@ $(document).ready(function() {
                 element.style.opacity = '0';
             })
 
-            bucketsToHide.map((bucket, i) => {
+            bucketsToHide.map((bucket) => {
                 bucket.style.cssText = '';
                 bucket.style.opacity = '0';
-            });
+            })
 
-            bucketsToHide.forEach((bucket, i) => {
-                setInterval(() => {
+            bucketsToHide.forEach((bucket, i) => { // Staggers re-appearance
+                setTimeout(() => {
                     bucket.style.cssText = 'opacity: 100; transition: box-shadow .5s, opacity 1s;'
-                }, 100 * i)
+                }, 100 * (i + 1))
             })
 
     
