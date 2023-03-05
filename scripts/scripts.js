@@ -141,7 +141,7 @@ $(document).ready(function() {
         $('.lines').on('click', () => {
             $('.one').toggleClass("rotatePos");
             $('.two').toggleClass("rotateNeg");
-            $('.three').fadeToggle(200);
+            $('.three').toggle();
         });
     };
     
@@ -187,12 +187,22 @@ $(document).ready(function() {
                 bucket.style.opacity = '0';
             })
 
-            bucketsToHide.forEach((bucket, i) => { // Staggers re-appearance
-                setTimeout(() => {
-                    bucket.style.cssText = 'opacity: 100; transition: box-shadow .5s, opacity 1s;'
-                }, 100 * (i + 1))
-            })
+            let countUp = buckets.indexOf(bucketTarget)
+            let countDown = buckets.indexOf(bucketTarget)
 
+            setInterval(() => {
+                if (countUp < 7){
+                    countUp++;
+                    buckets[countUp].style.cssText = 'opacity: 100; transition: box-shadow .5s, opacity 1s;'
+                }
+            }, 200)
+
+            setInterval(() => {
+                if (countDown > 0){
+                    countDown--;
+                    buckets[countDown].style.cssText = 'opacity: 100; transition: box-shadow .5s, opacity 1s;'
+                }
+            }, 200)            
     
         }
     

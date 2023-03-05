@@ -122,6 +122,22 @@ body {
 
 // Link styling
 
+.btn {
+    border: 0 solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 0px;
+    text-shadow: none;
+    transition: outline-color 500ms, background-position 500ms;
+    &:hover {
+        outline-color: rgba(255, 255, 255, 0);
+        outline-offset: 15px;
+        outline-width: 2px;
+        transition: all 1000ms;
+    }
+}
+
 .link {
     font: {
         family: helvetica, sans-serif;
@@ -259,19 +275,6 @@ body {
                 font: {
                     size: 13px;
                 }
-                border: 0 solid;
-                box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
-                outline: 1px solid;
-                outline-color: rgba(255, 255, 255, .5);
-                outline-offset: 0px;
-                text-shadow: none;
-                transition: outline-color 500ms, background-position 500ms;
-                &:hover {
-                    outline-color: rgba(255, 255, 255, 0);
-                    outline-offset: 15px;
-                    outline-width: 2px;
-                    transition: all 1000ms;
-                }
             }
         }
         .desc-container {
@@ -353,13 +356,12 @@ body {
                             transition: opacity .5s;
                         }
                         .exit {
-                            bottom: 0;
                             display: inline;
+                            padding: 5px;
                             color: #000;
                             opacity: 0;
                             font-size: 14px;
                             text-transform: uppercase;
-                            transition: opacity 1s;
                             cursor: pointer;
                             background: linear-gradient(to right, #3BCEFF, #3BCEFF 50%, #000 50%);
                             background-clip: text;
@@ -367,12 +369,21 @@ body {
                             -webkit-text-fill-color: transparent;
                             background-size: 200% 100%;
                             background-position: 100%;
-
-                            transition: all .5s, opacity .25s;
-                            animation-duration: .5s;
-
                             &:hover {
                                 background-position: 0 100%;
+                            }
+                        }
+                        .btn {
+                            border: 0 solid;
+                            outline: 1px solid;
+                            outline-color: black;
+                            outline-offset: 0px;
+                            text-shadow: none;
+                            transition: outline-color 500ms, background-position 500ms;
+                            &:hover {
+                                outline-color: rgba(255, 255, 255, 0);
+                                outline-offset: 10px;
+                                transition: outline-color 500ms, outline-offset 500ms, background-position 500ms;
                             }
                         }
                     }

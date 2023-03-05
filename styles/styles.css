@@ -158,6 +158,25 @@ body {
   cursor: default;
 }
 
+.btn {
+  border: 0 solid;
+  -webkit-box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+          box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
+  text-shadow: none;
+  -webkit-transition: outline-color 500ms, background-position 500ms;
+  transition: outline-color 500ms, background-position 500ms;
+}
+.btn:hover {
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  outline-width: 2px;
+  -webkit-transition: all 1000ms;
+  transition: all 1000ms;
+}
+
 .link {
   font-family: helvetica, sans-serif;
   font-size: 20px;
@@ -316,22 +335,6 @@ body {
 }
 .hero .wrap .resume.btn {
   font-size: 13px;
-  border: 0 solid;
-  -webkit-box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
-          box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
-  outline: 1px solid;
-  outline-color: rgba(255, 255, 255, 0.5);
-  outline-offset: 0px;
-  text-shadow: none;
-  -webkit-transition: outline-color 500ms, background-position 500ms;
-  transition: outline-color 500ms, background-position 500ms;
-}
-.hero .wrap .resume.btn:hover {
-  outline-color: rgba(255, 255, 255, 0);
-  outline-offset: 15px;
-  outline-width: 2px;
-  -webkit-transition: all 1000ms;
-  transition: all 1000ms;
 }
 .hero .wrap .desc-container {
   margin: 0;
@@ -454,14 +457,12 @@ body {
   transition: opacity 0.5s;
 }
 .skills-grid .container .wrap .buckets-container .bucket .bucket-info .exit {
-  bottom: 0;
   display: inline;
+  padding: 5px;
   color: #000;
   opacity: 0;
   font-size: 14px;
   text-transform: uppercase;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
   cursor: pointer;
   background: -webkit-gradient(linear, left top, right top, from(#3BCEFF), color-stop(50%, #3BCEFF), color-stop(50%, #000));
   background: linear-gradient(to right, #3BCEFF, #3BCEFF 50%, #000 50%);
@@ -470,13 +471,24 @@ body {
   -webkit-text-fill-color: transparent;
   background-size: 200% 100%;
   background-position: 100%;
-  -webkit-transition: all 0.5s, opacity 0.25s;
-  transition: all 0.5s, opacity 0.25s;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
 }
 .skills-grid .container .wrap .buckets-container .bucket .bucket-info .exit:hover {
   background-position: 0 100%;
+}
+.skills-grid .container .wrap .buckets-container .bucket .bucket-info .btn {
+  border: 0 solid;
+  outline: 1px solid;
+  outline-color: black;
+  outline-offset: 0px;
+  text-shadow: none;
+  -webkit-transition: outline-color 500ms, background-position 500ms;
+  transition: outline-color 500ms, background-position 500ms;
+}
+.skills-grid .container .wrap .buckets-container .bucket .bucket-info .btn:hover {
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 10px;
+  -webkit-transition: outline-color 500ms, outline-offset 500ms, background-position 500ms;
+  transition: outline-color 500ms, outline-offset 500ms, background-position 500ms;
 }
 
 .projects-sect {
