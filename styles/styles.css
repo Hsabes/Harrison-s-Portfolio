@@ -383,6 +383,7 @@ body {
   max-width: 750px;
 }
 .skills-grid .container .wrap .buckets-container .bucket {
+  pointer-events: auto;
   cursor: pointer;
   padding: 10px;
   display: -webkit-box;
@@ -422,12 +423,16 @@ body {
   -o-object-fit: scale-down;
      object-fit: scale-down;
   opacity: 0;
-  -webkit-transition: all 1s;
-  transition: all 1s;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
 }
 .skills-grid .container .wrap .buckets-container .bucket .bucket-info {
   position: relative;
   display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
   height: 100%;
   padding: 0 20px;
@@ -457,8 +462,10 @@ body {
   transition: opacity 0.5s;
 }
 .skills-grid .container .wrap .buckets-container .bucket .bucket-info .exit {
-  display: inline;
-  padding: 5px;
+  padding: 10px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   color: #000;
   opacity: 0;
   font-size: 14px;

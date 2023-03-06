@@ -243,8 +243,6 @@ body {
         padding: 12vh 50px 75vh;
         .arrow-down {
             margin-top: 80px;
-            // position: absolute;
-            // top: 550px;
             @media screen and (max-width: 650px){
                 // top: 525px;
             }
@@ -304,6 +302,7 @@ body {
                 gap: 5px;
                 max-width: 750px;
                 .bucket {
+                    pointer-events: auto;
                     cursor: pointer;
                     padding: 10px;
                     display: flex;
@@ -328,11 +327,12 @@ body {
                     img {
                         object-fit: scale-down;
                         opacity: 0;
-                        transition: all 1s;
+                        transition: all 1.5s;
                     }
                     .bucket-info {
                         position: relative;
                         display: none;
+                        flex-direction: column;
                         width: 100%;
                         height: 100%;
                         padding: 0 20px;
@@ -356,8 +356,8 @@ body {
                             transition: opacity .5s;
                         }
                         .exit {
-                            display: inline;
-                            padding: 5px;
+                            padding: 10px;
+                            align-self: center;
                             color: #000;
                             opacity: 0;
                             font-size: 14px;

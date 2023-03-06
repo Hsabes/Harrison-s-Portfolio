@@ -164,7 +164,7 @@ $(document).ready(function() {
         // Styles the target box
         bucketTarget.style.cssText = 'width: 100%; height: 292px; background-color: #fff; cursor: default;';
         targetImg.style.display = 'none'; // Original image
-        targetContainer.style.display = 'block'; // Container for the title/desc/exit
+        targetContainer.style.display = 'flex'; // Container for the title/desc/exit
         setTimeout(() => {
             targetChildren.map((element) => {
                 element.style.opacity = '100'; // Sets opacity of title/desc/exit
@@ -187,20 +187,27 @@ $(document).ready(function() {
                 bucket.style.opacity = '0';
             })
 
-            let countUp = buckets.indexOf(bucketTarget)
-            let countDown = buckets.indexOf(bucketTarget)
+            let countUp = buckets.indexOf(bucketTarget);
+            let countDown = countUp;
 
             setInterval(() => {
-                if (countUp < 7){
+                if (countUp < 11){
                     countUp++;
-                    buckets[countUp].style.cssText = 'opacity: 100; transition: box-shadow .5s, opacity 1s;'
+                    buckets[countUp].style.cssText = 'opacity: 100; transition: box-shadow .5s, opacity 1s; pointer-events: none;'
+                }
+                if (countUp === 11 && countDown === 0){
+                    buckets.map((bucket) => {
+                        bucket.style.pointerEvents = 'auto'
+                    })
+                    countDown = undefined;
+                    countUp = undefined;
                 }
             }, 200)
 
             setInterval(() => {
                 if (countDown > 0){
                     countDown--;
-                    buckets[countDown].style.cssText = 'opacity: 100; transition: box-shadow .5s, opacity 1s;'
+                    buckets[countDown].style.cssText = 'opacity: 100; transition: box-shadow .5s, opacity 1s; pointer-events: none;'
                 }
             }, 200)            
     
