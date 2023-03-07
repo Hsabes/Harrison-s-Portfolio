@@ -103,12 +103,12 @@ body {
             transform: translateY(0);
   }
   20% {
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px);
+    -webkit-transform: translateY(-7px);
+            transform: translateY(-7px);
   }
   80% {
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px);
+    -webkit-transform: translateY(-7px);
+            transform: translateY(-7px);
   }
 }
 
@@ -118,12 +118,12 @@ body {
             transform: translateY(0);
   }
   20% {
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px);
+    -webkit-transform: translateY(-7px);
+            transform: translateY(-7px);
   }
   80% {
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px);
+    -webkit-transform: translateY(-7px);
+            transform: translateY(-7px);
   }
 }
 @-webkit-keyframes shake {
@@ -240,22 +240,23 @@ body {
   cursor: default;
 }
 
-.animate {
-  -webkit-animation-name: bounce;
-          animation-name: bounce;
-}
-.animate:before {
-  content: "";
+.active {
+  -webkit-transition: right 0.5s;
+  transition: right 0.5s;
+  right: 477px;
+  top: 37px;
   position: absolute;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
   display: block;
   height: 6px;
   width: 6px;
   margin: 1px auto 0;
   background-color: #3BCEFF;
   border-radius: 50%;
+}
+
+.animate {
+  -webkit-animation-name: bounce;
+          animation-name: bounce;
 }
 
 .btn {

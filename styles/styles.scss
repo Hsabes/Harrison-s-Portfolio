@@ -90,10 +90,10 @@ body {
         transform: translateY(0)
     }
     20% {
-        transform: translateY(-5px)
+        transform: translateY(-7px)
     }
     80% {
-        transform: translateY(-5px)
+        transform: translateY(-7px)
     }
 }
 
@@ -177,20 +177,30 @@ body {
 
 // Link styling
 
+.active {
+    transition: right .5s;
+    right: 477px;
+    top: 37px;
+    position: absolute;
+    display: block;
+    height: 6px;
+    width: 6px;
+    margin: 1px auto 0;
+    background-color: #3BCEFF;
+    border-radius: 50%;
+}
+
 .animate {
-    &:before {
-        content: '';
-        position: absolute;
-        align-self: center;
-        display: block;
-        height: 6px;
-        width: 6px;
-        margin: 1px auto 0;
-        background-color: #3BCEFF;
-        border-radius: 50%;
-    }
     animation-name: bounce;
 }
+
+// .animate-down {
+//     animation-name: bounce;
+// }
+
+// .animate-up {
+//     animation-name: bounce;
+// }
 
 .btn {
     border: 0 solid;

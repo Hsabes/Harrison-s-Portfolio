@@ -43,7 +43,7 @@ $(document).ready(function() {
     
     function animateScroll(){
         // ARROWS
-        $(".to-grid").on('click', function() { // ANY DIRECTION ARROW THAT GOES TO SKILLS
+        $(".to-grid").on('click', function(e) { // ANY DIRECTION ARROW THAT GOES TO SKILLS
             $('.hero, .projects-sect, .contact-sect').animate({ // FADE OUT ANYTHING THAT ISN'T SKILLS
                 opacity: 0,
             }, 500)
@@ -54,11 +54,26 @@ $(document).ready(function() {
                 scrollTop: $(".skills-grid").offset().top
             }, isUpOrDown($(this)));
 
-            // Bounces correlated nav item on arrow navigation
-            $('.skills').addClass('animate')
-            $('.about-me, .projects, .contact').removeClass('animate')
+            if ($(this).hasClass('arrow-down')){
+                $('.about-me').addClass('animate')
+                $('.skills, .projects, .contact').removeClass('animate')
+            }
+            if ($(this).hasClass('arrow-up')){
+                $('.skills').addClass('animate')
+                $('.about-me, .projects, .contact').removeClass('animate')
+            }
+
+            setTimeout(() => {
+                $(this).removeClass('animate')
+            }, 500)
+
+            $('.active').css({
+                right: '348px'
+            })
+
+            console.log(e.target)
         });
-        $(".to-projects").on('click', function() { // ANY DIRECTION ARROW THAT GOES TO PROJECTS
+        $(".to-projects").on('click', function(e) { // ANY DIRECTION ARROW THAT GOES TO PROJECTS
             $('.skills-grid, .contact-sect, .hero').animate({ // FADE OUT ANYTHING THAT ISNT PROJECTS
                 opacity: 0,
             }, 500)
@@ -69,11 +84,20 @@ $(document).ready(function() {
                 scrollTop: $(".projects-sect").offset().top
             }, isUpOrDown($(this)));
 
-            // Bounces correlated nav item on arrow navigation
-            $('.projects').addClass('animate');
-            $('.about-me, .skills, .contact').removeClass('animate')
+            if ($(this).hasClass('arrow-down')){
+                $('.skills').addClass('animate')
+                $('.projects, .about-me, .contact').removeClass('animate')
+            }
+            if ($(this).hasClass('arrow-up')){
+                $('.skills').addClass('animate')
+                $('.about-me, .projects, .contact').removeClass('animate')
+            }
+
+            $('.active').css({
+                right: '255px'
+            })
         });
-        $(".to-intro").on('click', function() { // ANY DIRECTION ARROW THAT GOES TO INTRO
+        $(".to-intro").on('click', function(e) { // ANY DIRECTION ARROW THAT GOES TO INTRO
             $('.skills-grid, .projects-sect, .contact-sect').animate({ // FADE OUT ANYTHING THAT ISNT HERO SECTION
                 opacity: 0,
             }, 500);
@@ -87,8 +111,14 @@ $(document).ready(function() {
             // Bounces correlated nav item on arrow navigation
             $('.about-me').addClass('animate');
             $('.projects, .skills, .contact').removeClass('animate')
+
+
+
+            $('.active').css({
+                right: '477px'
+            })
         });
-        $(".to-contact").on('click', function() { // ANY DIRECTION ARROW THAT GOES TO CONTACT
+        $(".to-contact").on('click', function(e) { // ANY DIRECTION ARROW THAT GOES TO CONTACT
             $('.skills-grid, .projects-sect, .hero').animate({ // FADE OUT ANYTHING THAT ISNT CONTACT SECTION
                 opacity: 0,
             }, 500);
@@ -100,8 +130,17 @@ $(document).ready(function() {
             }, isUpOrDown($(this)));
 
             // Bounces correlated nav item on arrow navigation
-            $('.contact').addClass('animate');
-            $('.about-me, .skills, .projects').removeClass('animate')
+            // $('.contact').addClass('animate');
+            // $('.about-me, .skills, .projects').removeClass('animate')
+
+            if ($(this).hasClass('arrow-down')){
+                $('.projects').addClass('animate')
+                $('.skills, .about-me, .contact').removeClass('animate')
+            }
+
+            $('.active').css({
+                right: '124px'
+            })
         });
 
         // NAVIGATION ITEMS
@@ -287,8 +326,7 @@ $(document).ready(function() {
         }
 
         $('#email-body').on('input', () => {
-            if (bodyEl.style.borderColor === 'red'){
-                console.log(1)
+            if (bodyEl.style.borderColor === 'red'){ // To prevent unecessary event handling
                 bodyEl.style.borderColor = 'white'
             }
         })
