@@ -255,18 +255,19 @@ $(document).ready(function() {
 
     function sendMail() {
 
-        let mail = 'hsabes@gmail.com'
+        let mail = {
+            address: 'hsabes@gmail.com',
+            cc: '',
+            subject: encodeURIComponent(document.getElementById('email-subject').value),
+            body: encodeURIComponent(document.getElementById('email-body').value)
+        }
 
-        let link = `mailto:${mail}`
-                 + "?cc="
-                 + "&subject=" + encodeURIComponent(document.getElementById('email-subject').value)
-                 + "&body=" + encodeURIComponent(document.getElementById('email-body').value)
+        let link = `mailto:${mail.address}?cc=${mail.cc}&subject=${mail.subject}&body=${mail.subject}`
 
         window.location.href = link;
     }
 
-    $('.email').on('click', sendMail);
+    $('.send-email').on('click', sendMail);
 
 
-    
-    });
+});
