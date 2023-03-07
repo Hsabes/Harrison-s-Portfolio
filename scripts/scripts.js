@@ -175,7 +175,7 @@ $(document).ready(function() {
             e?.stopPropagation(); // Prevents event bubbling, optional chaining for up-arrow click
     
             // Reset styling of target and other buckets
-            bucketTarget.style.cssText = '';
+            bucketTarget.style.cssText = 'pointer-events: none;';
             targetImg.style.display = '';
             targetContainer.style.display = '';
             targetChildren.map((element) => {
@@ -183,7 +183,7 @@ $(document).ready(function() {
             })
 
             bucketsToHide.map((bucket) => {
-                bucket.style.cssText = 'pointer-events: none;';
+                bucket.style.cssText = 'pointer-events: none;'; // De-activates all buckets after exiting
                 bucket.style.opacity = '0';
             })
 
@@ -191,25 +191,25 @@ $(document).ready(function() {
             let countDown = countUp;
 
             setInterval(() => {
-                if (countUp < 11){
+                if (countUp < 11){ // Keeps the re-appearing buckets deactivated
                     countUp++;
                     buckets[countUp].style.cssText = 'opacity: 100; transition: box-shadow .5s, opacity 1s; pointer-events: none;'
                 }
-                if (countUp === 11 && countDown === 0){
+                if (countUp === 11 && countDown === 0){ // Re-activates the buckets when complete
                     buckets.map((bucket) => {
                         bucket.style.cssText = 'pointer-events: auto;'
                     })
                     countDown = undefined;
                     countUp = undefined;
                 }
-            }, 200)
+            }, 250)
 
             setInterval(() => {
-                if (countDown > 0){
+                if (countDown > 0){ // Keeps the re-appearing buckets deactivated
                     countDown--;
                     buckets[countDown].style.cssText = 'opacity: 100; transition: box-shadow .5s, opacity 1s; pointer-events: none;'
                 }
-            }, 200)
+            }, 150)
     
         }
     
