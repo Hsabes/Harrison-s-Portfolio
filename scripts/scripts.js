@@ -183,7 +183,7 @@ $(document).ready(function() {
             })
 
             bucketsToHide.map((bucket) => {
-                bucket.style.cssText = '';
+                bucket.style.cssText = 'pointer-events: none;';
                 bucket.style.opacity = '0';
             })
 
@@ -197,7 +197,7 @@ $(document).ready(function() {
                 }
                 if (countUp === 11 && countDown === 0){
                     buckets.map((bucket) => {
-                        bucket.style.pointerEvents = 'auto'
+                        bucket.style.cssText = 'pointer-events: auto;'
                     })
                     countDown = undefined;
                     countUp = undefined;
@@ -209,7 +209,7 @@ $(document).ready(function() {
                     countDown--;
                     buckets[countDown].style.cssText = 'opacity: 100; transition: box-shadow .5s, opacity 1s; pointer-events: none;'
                 }
-            }, 200)            
+            }, 200)
     
         }
     
