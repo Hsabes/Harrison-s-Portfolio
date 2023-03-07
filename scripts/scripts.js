@@ -115,6 +115,8 @@ $(document).ready(function() {
             $('html,body').animate({ // SCROLL TO HERO
                 scrollTop: $("body").offset().top
             }, 750);
+            $('.about-me').addClass('animate');
+            $('.projects, .skills, .contact').removeClass('animate')
         });
         $(".skills").on('click', function() { // GO TO SKILLS
             $('.hero, .projects-sect, .contact-sect').animate({ // FADE OUT EVERYTHING THAT ISNT SKILLS
@@ -126,6 +128,8 @@ $(document).ready(function() {
             $('html,body').animate({ // SCROLL TO SKILLS GRID
                 scrollTop: $(".skills-grid").offset().top
             }, 750);
+            $('.skills').addClass('animate')
+            $('.about-me, .projects, .contact').removeClass('animate')
         });
         $(".projects").on('click', function() { // GO TO PROJECTS SECTION
             $('.hero, .skills-grid, .contact-sect').animate({ // FADE OUT EVERYTHING THAT ISN'T PROJECTS SECTION
@@ -137,6 +141,8 @@ $(document).ready(function() {
             $('html,body').animate({ // SCROLL TO HERO SECTION
                 scrollTop: $(".projects-sect").offset().top
             }, 750);
+            $('.projects').addClass('animate');
+            $('.about-me, .skills, .contact').removeClass('animate')
         });
         $(".contact").on('click', function() { // GO TO CONTACT SECTION
             $('.hero, .skills-grid, .projects-sect').animate({ // FADE OUT EVERYTHING THAT ISN'T CONTACT SECTION
@@ -148,6 +154,8 @@ $(document).ready(function() {
             $('html,body').animate({ // SCROLL TO CONTACT SECTION
                 scrollTop: $(".contact-sect").offset().top
             }, 750);
+            $('.contact').addClass('animate');
+            $('.about-me, .skills, .projects').removeClass('animate')
         });
     };
     
@@ -253,7 +261,10 @@ $(document).ready(function() {
     showDetails();
 
 
-    function sendMail() {
+    function sendEmail() {
+
+        let bodyEl = document.getElementById('email-body')
+        let subjEl = document.getElementById('email-subject')
 
         let mail = {
             address: 'hsabes@gmail.com',
@@ -262,12 +273,30 @@ $(document).ready(function() {
             body: encodeURIComponent(document.getElementById('email-body').value)
         }
 
-        let link = `mailto:${mail.address}?cc=${mail.cc}&subject=${mail.subject}&body=${mail.subject}`
+        let link = `mailto:${mail.address}?cc=${mail.cc}&subject=${mail.subject}&body=${mail.body}`
 
-        window.location.href = link;
+        if (mail.body.length > 0){
+            window.location.href = link;
+            bodyEl.placeholder = "Body";
+            bodyEl.style.borderColor = 'white';
+            $('#email-body').removeClass('error');
+        } else {
+            bodyEl.placeholder = "Unfortunately, I am not a mind reader. Please include a body for your email!";
+            bodyEl.style.borderColor = 'red';
+            $('#email-body').addClass('error');
+        }
+
+        $('#email-body').on('input', () => {
+            if (bodyEl.style.borderColor === 'red'){
+                console.log(1)
+                bodyEl.style.borderColor = 'white'
+            }
+        })
+
     }
 
-    $('.send-email').on('click', sendMail);
+    $('.send-email').on('click', sendEmail);
+
 
 
 });

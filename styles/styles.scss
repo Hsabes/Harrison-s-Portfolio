@@ -59,6 +59,10 @@ body {
         &:hover {
             border-color: #3BCEFF;
         }
+        @media screen and (max-width: 820px){
+            height: 30px;
+            width: 30px;
+        }
     }
     .arrow-up {
         margin-top: 125px;
@@ -71,6 +75,10 @@ body {
         transition: border-color .5s;
         &:hover {
             border-color: #3BCEFF;
+        }
+        @media screen and (max-width: 820px){
+            height: 30px;
+            width: 30px;
         }
     }
 }
@@ -87,6 +95,26 @@ body {
     80% {
         transform: translateY(-5px)
     }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0)
+    }
+    25% {
+        transform: translateX(-10px)
+    }
+    50% {
+        transform: translateX(10px)
+    }
+    75% {
+        transform: translateX(-5px)
+    }
+}
+
+.error {
+    animation-duration: .25s;
+    animation-name: shake;
 }
 
 @keyframes expand {
@@ -150,9 +178,18 @@ body {
 // Link styling
 
 .animate {
-    animation-duration: .5s;
+    &:before {
+        content: '';
+        position: absolute;
+        align-self: center;
+        display: block;
+        height: 6px;
+        width: 6px;
+        margin: 1px auto 0;
+        background-color: #3BCEFF;
+        border-radius: 50%;
+    }
     animation-name: bounce;
-    background-position: 0 100%;
 }
 
 .btn {
@@ -253,7 +290,7 @@ body {
                     content: '';
                     display: block;
                     height: 1px;
-                    margin: 0 auto;
+                    margin: 1px auto 0;
                     width: 0%;
                     background-color: #fff;
                     transition: all 500ms;
