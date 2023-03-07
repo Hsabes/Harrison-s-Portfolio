@@ -20,7 +20,7 @@ $(document).ready(function() {
             "Currently my favorite hobby is to disc golf. It's an incredible sport that facilitates social interaction, exercise, and an appreciation for the beauty of nature. My future plan is to travel the world and play some of the most famous courses around the globe.",
             "I have a bachelors degree in Guitar from Berklee College of Music and have been playing the guitar since elementary school. My favorite genres to listen to are EDM, blues, and instrumental rock and I love playing BB King style blues on my Fender Strat.",
             "I have a standard issue cat named Smitty who is currently four years old and has never done anything or anyone wrong. He loves playing with his wand toys, crinkling plastic (particularly at 3AM), and crab walking as an attempt to intimidate the vacuum cleaner.",
-            "I started coding in May of 2022 when I started studying at Flatiron School's Software Engineering program. I have a passion for finding creative solutions and I consistently exercise this passion through algorithms and project building. View my resume below."
+            "I started coding in May of 2022 when I began studying at Flatiron School's Software Engineering program. I have a passion for finding creative solutions and I consistently exercise this passion through algorithms and project building. View my resume below."
         ];
         let count = 0;
         setInterval(function () {
@@ -53,6 +53,10 @@ $(document).ready(function() {
             $('html,body').animate({ // SCROLL TO SKILLS
                 scrollTop: $(".skills-grid").offset().top
             }, isUpOrDown($(this)));
+
+            // Bounces correlated nav item on arrow navigation
+            $('.skills').addClass('animate')
+            $('.about-me, .projects, .contact').removeClass('animate')
         });
         $(".to-projects").on('click', function() { // ANY DIRECTION ARROW THAT GOES TO PROJECTS
             $('.skills-grid, .contact-sect, .hero').animate({ // FADE OUT ANYTHING THAT ISNT PROJECTS
@@ -64,6 +68,10 @@ $(document).ready(function() {
             $('html,body').animate({ // SCROLL TO PROJECTS
                 scrollTop: $(".projects-sect").offset().top
             }, isUpOrDown($(this)));
+
+            // Bounces correlated nav item on arrow navigation
+            $('.projects').addClass('animate');
+            $('.about-me, .skills, .contact').removeClass('animate')
         });
         $(".to-intro").on('click', function() { // ANY DIRECTION ARROW THAT GOES TO INTRO
             $('.skills-grid, .projects-sect, .contact-sect').animate({ // FADE OUT ANYTHING THAT ISNT HERO SECTION
@@ -75,6 +83,10 @@ $(document).ready(function() {
             $('html,body').animate({ // SCROLL TO HERO
                 scrollTop: $(".navigation").offset().top
             }, isUpOrDown($(this)));
+
+            // Bounces correlated nav item on arrow navigation
+            $('.about-me').addClass('animate');
+            $('.projects, .skills, .contact').removeClass('animate')
         });
         $(".to-contact").on('click', function() { // ANY DIRECTION ARROW THAT GOES TO CONTACT
             $('.skills-grid, .projects-sect, .hero').animate({ // FADE OUT ANYTHING THAT ISNT CONTACT SECTION
@@ -86,6 +98,10 @@ $(document).ready(function() {
             $('html,body').animate({ // SCROLL TO CONTACT
                 scrollTop: $(".contact-sect").offset().top
             }, isUpOrDown($(this)));
+
+            // Bounces correlated nav item on arrow navigation
+            $('.contact').addClass('animate');
+            $('.about-me, .skills, .projects').removeClass('animate')
         });
 
         // NAVIGATION ITEMS
@@ -199,10 +215,10 @@ $(document).ready(function() {
                     buckets.map((bucket) => {
                         bucket.style.cssText = 'pointer-events: auto;'
                     })
-                    countDown = undefined;
                     countUp = undefined;
+                    countDown = undefined;
                 }
-            }, 250)
+            }, 150)
 
             setInterval(() => {
                 if (countDown > 0){ // Keeps the re-appearing buckets deactivated
@@ -235,5 +251,22 @@ $(document).ready(function() {
     };
     
     showDetails();
+
+
+    function sendMail() {
+
+        let mail = 'hsabes@gmail.com'
+
+        let link = `mailto:${mail}`
+                 + "?cc="
+                 + "&subject=" + encodeURIComponent(document.getElementById('email-subject').value)
+                 + "&body=" + encodeURIComponent(document.getElementById('email-body').value)
+
+        window.location.href = link;
+    }
+
+    $('.email').on('click', sendMail);
+
+
     
     });

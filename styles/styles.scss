@@ -40,7 +40,7 @@ body {
     -webkit-background-clip: text;
     background-size: 200% 100%;
     background-position: 100%;
-    background: #3BCEFF; /* WebKit/Blink Browsers */
+    background: #3BCEFF;
 }
 
 // General navigation arrow styling
@@ -103,6 +103,33 @@ body {
     }
 }
 
+@keyframes underline {
+    0% {
+        width: 0%;
+        background: #ffffff00;
+    }
+    50% {
+        background: #ffffff;
+    }
+    100% {
+        width: 100%;
+        background: #ffffff;
+    }
+}
+
+// .active {
+//     &:after {
+//         content: '';
+//         display: block;
+//         height: 1px;
+//         margin: 0 auto;
+//         width: 0%;
+
+//         animation-name: expand;
+//         animation-duration: 500ms;
+//     }
+// }
+
 .rotatePos {
     transform: rotate(45deg);
 }
@@ -121,6 +148,12 @@ body {
 }
 
 // Link styling
+
+.animate {
+    animation-duration: .5s;
+    animation-name: bounce;
+    background-position: 0 100%;
+}
 
 .btn {
     border: 0 solid;
@@ -153,7 +186,7 @@ body {
     background-size: 200% 100%;
     background-position: 100%;
 
-    transition: all .5s;
+    transition: background-position .5s;
     animation-duration: .5s;
 
     &:hover {
@@ -210,6 +243,22 @@ body {
             @media screen and (max-width: 525px){
                 display: none;
             }
+            .link {
+                &:hover {
+                    &:after {
+                        width: 100%;
+                    }
+                }
+                &:after {
+                    content: '';
+                    display: block;
+                    height: 1px;
+                    margin: 0 auto;
+                    width: 0%;
+                    background-color: #fff;
+                    transition: all 500ms;
+                }
+            }
         }
         .mobile-nav-container {
             display: none;
@@ -241,9 +290,6 @@ body {
         padding: 12vh 50px 75vh;
         .arrow-down {
             margin-top: 80px;
-            @media screen and (max-width: 650px){
-                // top: 525px;
-            }
         }
         .shuffle-title {
             margin-top: -15px;
@@ -258,7 +304,6 @@ body {
             animation-duration: 20s;
             animation-iteration-count: infinite;
             animation-timing-function: linear;
-            animation-delay: 0ms;
         }
         .resume {
             max-width: 160px; 
@@ -345,6 +390,7 @@ body {
                             font-size: 20px;
                             text-transform: uppercase;
                             transition: opacity .5s;
+                            margin-top: 15px;
                         }
                         .desc {
                             color: #000;
@@ -402,4 +448,46 @@ body {
     top: 2800px;
     text-align: center;
     margin-bottom: 5500px;
+    .container {
+        .desc {
+            text-transform: uppercase;
+        }
+        .wrap {
+            .text-field {
+                padding: 5px;
+                border: 1px solid #fff;
+                color: #fff;
+                display: block;
+                background-color: #000;
+                min-width: 200px;
+
+                &:focus {
+                    outline: 1px solid transparent;
+                }
+            }
+            #email-subject {
+                margin: 0 auto;
+                width: 25%;
+            }
+            #email-body {
+                width: 25%;
+                max-width: 1180px;
+                max-height: 600px;
+                min-height: 200px;
+                margin: 10px auto;
+            }
+            .btn {
+                margin: 10px auto;
+                cursor: pointer;
+                width: 100px;
+                padding: 10px 0;
+                font: {
+                    size: 13px;
+                }
+                color: #fff;
+                animation-name: none;
+            }
+        }
+    }
+
 }
