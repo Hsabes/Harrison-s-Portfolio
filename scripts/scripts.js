@@ -64,7 +64,7 @@ $(document).ready(function() {
             }
 
             setTimeout(() => {
-                $(this).removeClass('animate')
+                $('.about-me, .skills, .projects, .contact').removeClass('animate')
             }, 500)
 
             $('.active').css({
@@ -89,9 +89,13 @@ $(document).ready(function() {
                 $('.projects, .about-me, .contact').removeClass('animate')
             }
             if ($(this).hasClass('arrow-up')){
-                $('.skills').addClass('animate')
-                $('.about-me, .projects, .contact').removeClass('animate')
+                $('.projects').addClass('animate')
+                $('.about-me, .skills, .contact').removeClass('animate')
             }
+
+            setTimeout(() => {
+                $('.about-me, .skills, .projects, .contact').removeClass('animate')
+            }, 500)
 
             $('.active').css({
                 right: '255px'
@@ -112,7 +116,9 @@ $(document).ready(function() {
             $('.about-me').addClass('animate');
             $('.projects, .skills, .contact').removeClass('animate')
 
-
+            setTimeout(() => {
+                $('.about-me, .skills, .projects, .contact').removeClass('animate')
+            }, 500)
 
             $('.active').css({
                 right: '477px'
@@ -129,14 +135,14 @@ $(document).ready(function() {
                 scrollTop: $(".contact-sect").offset().top
             }, isUpOrDown($(this)));
 
-            // Bounces correlated nav item on arrow navigation
-            // $('.contact').addClass('animate');
-            // $('.about-me, .skills, .projects').removeClass('animate')
-
             if ($(this).hasClass('arrow-down')){
                 $('.projects').addClass('animate')
                 $('.skills, .about-me, .contact').removeClass('animate')
             }
+
+            setTimeout(() => {
+                $('.about-me, .skills, .projects, .contact').removeClass('animate')
+            }, 500)
 
             $('.active').css({
                 right: '124px'
