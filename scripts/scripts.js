@@ -38,7 +38,7 @@ $(document).ready(function() {
     })
 
     function isUpOrDown(element){ // Adjusts scroll speed if use goes up or down
-        return element.hasClass('arrow-up') ? 1000 : 2000;
+        return element.hasClass('arrow-up') ? 1000 : 1500;
     }
 
     function removeAnimation(){
@@ -337,10 +337,6 @@ $(document).ready(function() {
 
     function sendEmail(e) {
 
-        e.preventDefault()
-
-        let subjEl = document.getElementById('email-subject')
-
         let mail = {
             address: 'hsabes@gmail.com',
             cc: '',
@@ -360,7 +356,6 @@ $(document).ready(function() {
                 $('#email-body').removeClass('error');
             }, 250)
             count++
-            console.log(count)
             switch (count){
                 case 1: return bodyEl.placeholder = "Uh oh, looks like you forgot to include a body for your email!"; break;
                 case 2: return bodyEl.placeholder = "The animation is fun, right?"; break;
