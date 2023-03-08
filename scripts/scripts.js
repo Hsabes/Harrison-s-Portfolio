@@ -40,6 +40,12 @@ $(document).ready(function() {
     function isUpOrDown(element){ // Adjusts scroll speed if use goes up or down
         return element.hasClass('arrow-up') ? 1000 : 2000;
     }
+
+    function removeAnimation(){
+        setTimeout(() => {
+            $('.about-me, .skills, .projects, .contact').removeClass('animate')
+        }, 500)
+    }
     
     function animateScroll(){
         // ARROWS
@@ -63,15 +69,12 @@ $(document).ready(function() {
                 $('.about-me, .projects, .contact').removeClass('animate')
             }
 
-            setTimeout(() => {
-                $('.about-me, .skills, .projects, .contact').removeClass('animate')
-            }, 500)
+            removeAnimation()
 
             $('.active').css({
                 right: '348px'
             })
 
-            console.log(e.target)
         });
         $(".to-projects").on('click', function(e) { // ANY DIRECTION ARROW THAT GOES TO PROJECTS
             $('.skills-grid, .contact-sect, .hero').animate({ // FADE OUT ANYTHING THAT ISNT PROJECTS
@@ -93,9 +96,7 @@ $(document).ready(function() {
                 $('.about-me, .skills, .contact').removeClass('animate')
             }
 
-            setTimeout(() => {
-                $('.about-me, .skills, .projects, .contact').removeClass('animate')
-            }, 500)
+            removeAnimation()
 
             $('.active').css({
                 right: '255px'
@@ -116,9 +117,7 @@ $(document).ready(function() {
             $('.about-me').addClass('animate');
             $('.projects, .skills, .contact').removeClass('animate')
 
-            setTimeout(() => {
-                $('.about-me, .skills, .projects, .contact').removeClass('animate')
-            }, 500)
+            removeAnimation()
 
             $('.active').css({
                 right: '477px'
@@ -140,9 +139,7 @@ $(document).ready(function() {
                 $('.skills, .about-me, .contact').removeClass('animate')
             }
 
-            setTimeout(() => {
-                $('.about-me, .skills, .projects, .contact').removeClass('animate')
-            }, 500)
+            removeAnimation()
 
             $('.active').css({
                 right: '124px'
@@ -162,6 +159,12 @@ $(document).ready(function() {
             }, 750);
             $('.about-me').addClass('animate');
             $('.projects, .skills, .contact').removeClass('animate')
+
+            $('.active').css({
+                right: '477px'
+            })
+
+            removeAnimation()
         });
         $(".skills").on('click', function() { // GO TO SKILLS
             $('.hero, .projects-sect, .contact-sect').animate({ // FADE OUT EVERYTHING THAT ISNT SKILLS
@@ -175,6 +178,12 @@ $(document).ready(function() {
             }, 750);
             $('.skills').addClass('animate')
             $('.about-me, .projects, .contact').removeClass('animate')
+
+            $('.active').css({
+                right: '348px'
+            })
+
+            removeAnimation()
         });
         $(".projects").on('click', function() { // GO TO PROJECTS SECTION
             $('.hero, .skills-grid, .contact-sect').animate({ // FADE OUT EVERYTHING THAT ISN'T PROJECTS SECTION
@@ -188,6 +197,12 @@ $(document).ready(function() {
             }, 750);
             $('.projects').addClass('animate');
             $('.about-me, .skills, .contact').removeClass('animate')
+
+            $('.active').css({
+                right: '255px'
+            })
+
+            removeAnimation()
         });
         $(".contact").on('click', function() { // GO TO CONTACT SECTION
             $('.hero, .skills-grid, .projects-sect').animate({ // FADE OUT EVERYTHING THAT ISN'T CONTACT SECTION
@@ -201,6 +216,12 @@ $(document).ready(function() {
             }, 750);
             $('.contact').addClass('animate');
             $('.about-me, .skills, .projects').removeClass('animate')
+
+            $('.active').css({
+                right: '124px'
+            })
+
+            removeAnimation()
         });
     };
     
