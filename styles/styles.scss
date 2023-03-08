@@ -145,19 +145,6 @@ body {
     }
 }
 
-// .active {
-//     &:after {
-//         content: '';
-//         display: block;
-//         height: 1px;
-//         margin: 0 auto;
-//         width: 0%;
-
-//         animation-name: expand;
-//         animation-duration: 500ms;
-//     }
-// }
-
 .rotatePos {
     transform: rotate(45deg);
 }
@@ -166,13 +153,6 @@ body {
     transform: rotate(-45deg);
     margin-top: -3px !important;
     
-}
-
-.bringforward {
-    width: 100%;
-    height: 292px;
-    background-color: #fff;
-    cursor: default;
 }
 
 // Link styling
@@ -193,14 +173,6 @@ body {
 .animate {
     animation-name: bounce;
 }
-
-// .animate-down {
-//     animation-name: bounce;
-// }
-
-// .animate-up {
-//     animation-name: bounce;
-// }
 
 .btn {
     border: 0 solid;

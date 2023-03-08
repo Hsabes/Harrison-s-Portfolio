@@ -69,11 +69,13 @@ $(document).ready(function() {
                 $('.about-me, .projects, .contact').removeClass('animate')
             }
 
-            removeAnimation()
-
             $('.active').css({
                 right: '348px'
             })
+
+            removeAnimation()
+
+            
 
         });
         $(".to-projects").on('click', function(e) { // ANY DIRECTION ARROW THAT GOES TO PROJECTS
@@ -96,11 +98,13 @@ $(document).ready(function() {
                 $('.about-me, .skills, .contact').removeClass('animate')
             }
 
-            removeAnimation()
-
             $('.active').css({
                 right: '255px'
             })
+
+            removeAnimation()
+
+            
         });
         $(".to-intro").on('click', function(e) { // ANY DIRECTION ARROW THAT GOES TO INTRO
             $('.skills-grid, .projects-sect, .contact-sect').animate({ // FADE OUT ANYTHING THAT ISNT HERO SECTION
@@ -117,11 +121,12 @@ $(document).ready(function() {
             $('.about-me').addClass('animate');
             $('.projects, .skills, .contact').removeClass('animate')
 
-            removeAnimation()
-
             $('.active').css({
                 right: '477px'
             })
+
+            removeAnimation()
+
         });
         $(".to-contact").on('click', function(e) { // ANY DIRECTION ARROW THAT GOES TO CONTACT
             $('.skills-grid, .projects-sect, .hero').animate({ // FADE OUT ANYTHING THAT ISNT CONTACT SECTION
@@ -139,11 +144,12 @@ $(document).ready(function() {
                 $('.skills, .about-me, .contact').removeClass('animate')
             }
 
-            removeAnimation()
-
             $('.active').css({
                 right: '124px'
             })
+
+            removeAnimation()
+
         });
 
         // NAVIGATION ITEMS
