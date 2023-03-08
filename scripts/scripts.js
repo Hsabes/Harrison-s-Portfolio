@@ -19,7 +19,7 @@ $(document).ready(function() {
             "When I'm not working or doing things in my spare time, I spend a fair amount of my free time either solving Kata on CodeWars or writing some of my own. I do this so I can consistently improve on my ability to write creative custom code for unique problems.",
             "Currently my favorite hobby is to disc golf. It's an incredible sport that facilitates social interaction, exercise, and an appreciation for the beauty of nature. My future plan is to travel the world and play some of the most famous courses around the globe.",
             "I have a bachelors degree in Guitar from Berklee College of Music and have been playing the guitar since elementary school. My favorite genres to listen to are EDM, blues, and instrumental rock and I love playing BB King style blues on my Fender Strat.",
-            "I have a standard issue cat named Smitty who is currently four years old and has never done anything or anyone wrong. He loves playing with his wand toys, crinkling plastic (particularly at 3AM), and crab walking as an attempt to intimidate the vacuum cleaner.",
+            "I have a standard issue cat named Smitty who is currently four years old and has never done anything or anyone wrong. He loves playing with his wand toys, crinkling plastic (particularly at 3AM), and crab walking in an attempt to intimidate the vacuum cleaner.",
             "I started coding in May of 2022 when I began studying at Flatiron School's Software Engineering program. I have a passion for finding creative solutions and I consistently exercise this passion through algorithms and project building. View my resume below."
         ];
         let count = 0;
@@ -332,10 +332,13 @@ $(document).ready(function() {
     
     showDetails();
 
+    let count = 0
+    let bodyEl = document.getElementById('email-body')
 
-    function sendEmail() {
+    function sendEmail(e) {
 
-        let bodyEl = document.getElementById('email-body')
+        e.preventDefault()
+
         let subjEl = document.getElementById('email-subject')
 
         let mail = {
@@ -347,21 +350,39 @@ $(document).ready(function() {
 
         let link = `mailto:${mail.address}?cc=${mail.cc}&subject=${mail.subject}&body=${mail.body}`
 
+
         if (mail.body.length > 0){
             window.location.href = link;
-            bodyEl.placeholder = "Body";
-            bodyEl.style.borderColor = 'white';
-            $('#email-body').removeClass('error');
         } else {
-            bodyEl.placeholder = "Unfortunately, I am not a mind reader. Please include a body for your email!";
             bodyEl.style.borderColor = 'red';
             $('#email-body').addClass('error');
+            setTimeout(() => {
+                $('#email-body').removeClass('error');
+            }, 250)
+            count++
+            console.log(count)
+            switch (count){
+                case 1: return bodyEl.placeholder = "Uh oh, looks like you forgot to include a body for your email!"; break;
+                case 2: return bodyEl.placeholder = "The animation is fun, right?"; break;
+                case 5: return bodyEl.placeholder = "Okay, you can stop now."; break;
+                case 9: return bodyEl.placeholder = "Really rude."; break;
+                case 14: return bodyEl.placeholder = "STOP."; break;
+                case 20: return bodyEl.placeholder = "(╯°□°)╯︵ ┻━┻"; break;
+                case 25: return count = 0; break;
+
+            }
         }
+
+
 
         $('#email-body').on('input', () => {
             if (bodyEl.style.borderColor === 'red'){ // To prevent unecessary event handling
                 bodyEl.style.borderColor = 'white'
             }
+            count = 0
+            bodyEl.placeholder = "Body";
+            bodyEl.style.borderColor = 'white';
+            $('#email-body').removeClass('error');
         })
 
     }
