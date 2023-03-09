@@ -422,8 +422,14 @@ $(document).ready(function() {
             if (count === 2){
 
                 projects.css({
-                    left: '500px'
+                    left: '33%'
                 });
+
+                $('.arrow-right').css({
+                    opacity: 0,
+                    pointerEvents: 'none'
+                })
+
                 hmail.style.opacity = '100'
 
                 calculator.style.opacity = '0'
@@ -434,21 +440,31 @@ $(document).ready(function() {
                     left: '0px'
                 });
 
+                $('.carousel-arrow').css({
+                    opacity: 100,
+                    pointerEvents: 'auto'
+                })
+
                 calculator.style.opacity = '100'
 
                 chess.style.opacity = '0'
                 hmail.style.opacity = '0'
             }
             if (count === 0){
-
                 projects.css({
-                    left: '-500px'
+                    left: '-33%'
                 });
+
+                $('.arrow-left').css({
+                    opacity: 0,
+                    pointerEvents: 'none'
+                })
 
                 chess.style.opacity = '100'
 
                 hmail.style.opacity = '0'
                 calculator.style.opacity = '0'
+
             }
 
 

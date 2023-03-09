@@ -88,7 +88,7 @@ body {
         border-bottom: 2px solid white;
         transform: rotate(135deg);
         cursor: pointer;
-        transition: border-color .5s;
+        transition: border-color .5s, opacity .5s;
         &:hover {
             border-color: #3BCEFF;
         }
@@ -104,7 +104,7 @@ body {
         border-bottom: 2px solid white;
         transform: rotate(-45deg);
         cursor: pointer;
-        transition: border-color .5s;
+        transition: border-color .5s, opacity .5s;
         &:hover {
             border-color: #3BCEFF;
         }
@@ -496,21 +496,36 @@ body {
             display: flex;
             justify-content: space-between;
             padding: 50px;
+            max-width: none;
             .next {
                 .carousel-arrow {
                     align-self: center;
                 }
             }
             .projects-container {
-                padding: 50px 0;
+                padding: 25px 0;
                 display: flex;
                 justify-content: center;
                 border: 2px solid white;
-                width: 80%;
+                overflow-y: visible;
+                .pagination-container {
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    gap: 10px;
+                    .dot {
+                        height: 5px;
+                        width: 5px;
+                        border-radius: 50%;
+                        background-color: #fff;
+                    }
+                }
                 .project {
                     position: relative;
                     align-self: center;
                     max-width: 500px;
+                    cursor: default;
+                    margin-top: 10px;
                     p {
                         color: #fff;
                     }

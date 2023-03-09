@@ -104,8 +104,8 @@ body {
   -webkit-transform: rotate(135deg);
           transform: rotate(135deg);
   cursor: pointer;
-  -webkit-transition: border-color 0.5s;
-  transition: border-color 0.5s;
+  -webkit-transition: border-color 0.5s, opacity 0.5s;
+  transition: border-color 0.5s, opacity 0.5s;
 }
 .next .arrow-left:hover {
   border-color: #3BCEFF;
@@ -124,8 +124,8 @@ body {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
   cursor: pointer;
-  -webkit-transition: border-color 0.5s;
-  transition: border-color 0.5s;
+  -webkit-transition: border-color 0.5s, opacity 0.5s;
+  transition: border-color 0.5s, opacity 0.5s;
 }
 .next .arrow-right:hover {
   border-color: #3BCEFF;
@@ -650,6 +650,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 50px;
+  max-width: none;
 }
 .projects-sect .container .wrap .next .carousel-arrow {
   -ms-flex-item-align: center;
@@ -657,7 +658,7 @@ body {
       align-self: center;
 }
 .projects-sect .container .wrap .projects-container {
-  padding: 50px 0;
+  padding: 25px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -665,7 +666,23 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   border: 2px solid white;
-  width: 80%;
+  overflow-y: visible;
+}
+.projects-sect .container .wrap .projects-container .pagination-container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+.projects-sect .container .wrap .projects-container .pagination-container .dot {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: #fff;
 }
 .projects-sect .container .wrap .projects-container .project {
   position: relative;
@@ -673,6 +690,8 @@ body {
       -ms-grid-row-align: center;
       align-self: center;
   max-width: 500px;
+  cursor: default;
+  margin-top: 10px;
 }
 .projects-sect .container .wrap .projects-container .project p {
   color: #fff;
