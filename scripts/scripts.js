@@ -83,8 +83,6 @@ $(document).ready(function() {
 
             removeAnimation()
 
-            
-
         });
         $(".to-projects").on('click', function(e) { // ANY DIRECTION ARROW THAT GOES TO PROJECTS
             $('.skills-grid, .contact-sect, .hero').animate({ // FADE OUT ANYTHING THAT ISNT PROJECTS
@@ -111,7 +109,6 @@ $(document).ready(function() {
             })
 
             removeAnimation()
-
             
         });
         $(".to-intro").on('click', function(e) { // ANY DIRECTION ARROW THAT GOES TO INTRO
@@ -401,8 +398,65 @@ $(document).ready(function() {
 
     $('.send-email').on('click', sendEmail);
 
-    $('.project').css({
-        left: 500
-    })
+    function navigateProjects(){
+        let projects = $('.project')
+        let count = 1
+
+        let hmail = document.querySelector('.hmail')
+        let chess = document.querySelector('.chess')
+        let calculator = document.querySelector('.calculator')
+        
+        $('.carousel-arrow').on('click', function() {
+            if ($(this).hasClass('arrow-left')){
+                if (count > 0){
+                    count--
+                    console.log(count)
+                }
+            } else {
+                if (count < 2){
+                    count++
+                    console.log(count)
+                }
+            }
+
+            if (count === 2){
+
+                projects.css({
+                    left: '500px'
+                });
+                hmail.style.opacity = '100'
+
+                calculator.style.opacity = '0'
+                chess.style.opacity = '0'
+            }
+            if (count === 1){
+                projects.css({
+                    left: '0px'
+                });
+
+                calculator.style.opacity = '100'
+
+                chess.style.opacity = '0'
+                hmail.style.opacity = '0'
+            }
+            if (count === 0){
+
+                projects.css({
+                    left: '-500px'
+                });
+
+                chess.style.opacity = '100'
+
+                hmail.style.opacity = '0'
+                calculator.style.opacity = '0'
+            }
+
+
+
+        })
+
+    }
+
+    navigateProjects();
 
 });

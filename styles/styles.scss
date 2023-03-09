@@ -86,7 +86,7 @@ body {
         width: 50px;
         border-right: 2px solid white;
         border-bottom: 2px solid white;
-        transform: rotate(-45deg);
+        transform: rotate(135deg);
         cursor: pointer;
         transition: border-color .5s;
         &:hover {
@@ -102,7 +102,7 @@ body {
         width: 50px;
         border-right: 2px solid white;
         border-bottom: 2px solid white;
-        transform: rotate(135deg);
+        transform: rotate(-45deg);
         cursor: pointer;
         transition: border-color .5s;
         &:hover {
@@ -511,8 +511,6 @@ body {
                     position: relative;
                     align-self: center;
                     max-width: 500px;
-                    left: 0px; // -500, 0, 500
-                    transition: left 1s;
                     p {
                         color: #fff;
                     }
@@ -530,16 +528,18 @@ body {
                             text-transform: uppercase;
                         }
                     }
-                    &.hmail{
-                        opacity: 10%;
-                    }
-                    &.chess {
-                        opacity: 10%;
-                    }
-                    &.calculator {
-                        opacity: 100;
-                        
-                    }
+                }
+                .hmail{ // 2
+                    opacity: 0;
+                    transition: left 1s, opacity .5s;
+                }
+                .calculator { // 1
+                    opacity: 100;  
+                    transition: left 1s, opacity .5s;
+                }
+                .chess { // 0
+                    opacity: 0;
+                    transition: left 1s, opacity .5s;
                 }
             }
         }

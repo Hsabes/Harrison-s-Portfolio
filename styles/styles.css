@@ -101,8 +101,8 @@ body {
   width: 50px;
   border-right: 2px solid white;
   border-bottom: 2px solid white;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
   cursor: pointer;
   -webkit-transition: border-color 0.5s;
   transition: border-color 0.5s;
@@ -121,8 +121,8 @@ body {
   width: 50px;
   border-right: 2px solid white;
   border-bottom: 2px solid white;
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
   cursor: pointer;
   -webkit-transition: border-color 0.5s;
   transition: border-color 0.5s;
@@ -673,9 +673,6 @@ body {
       -ms-grid-row-align: center;
       align-self: center;
   max-width: 500px;
-  left: 0px;
-  -webkit-transition: left 1s;
-  transition: left 1s;
 }
 .projects-sect .container .wrap .projects-container .project p {
   color: #fff;
@@ -698,14 +695,20 @@ body {
   text-decoration: none;
   text-transform: uppercase;
 }
-.projects-sect .container .wrap .projects-container .project.hmail {
-  opacity: 10%;
+.projects-sect .container .wrap .projects-container .hmail {
+  opacity: 0;
+  -webkit-transition: left 1s, opacity 0.5s;
+  transition: left 1s, opacity 0.5s;
 }
-.projects-sect .container .wrap .projects-container .project.chess {
-  opacity: 10%;
-}
-.projects-sect .container .wrap .projects-container .project.calculator {
+.projects-sect .container .wrap .projects-container .calculator {
   opacity: 100;
+  -webkit-transition: left 1s, opacity 0.5s;
+  transition: left 1s, opacity 0.5s;
+}
+.projects-sect .container .wrap .projects-container .chess {
+  opacity: 0;
+  -webkit-transition: left 1s, opacity 0.5s;
+  transition: left 1s, opacity 0.5s;
 }
 
 .contact-sect {
