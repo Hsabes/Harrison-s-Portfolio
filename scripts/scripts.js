@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+    // ================
+    // ABOUT ME SECTION
+    // ================
+
     // CODE FOR ROTATING THE LAST WORD OF HTML TEXT
     function rotateTitle() {
         let titleArray = ["I'm a problem solver.", "I'm a disc golfer.", "I'm a guitarist.", "I'm a cat dad.", "I'm a developer"];
@@ -32,6 +36,10 @@ $(document).ready(function() {
     }
     
     rotateDesc()
+
+    // ================
+    // NAVIGATION LOGIC
+    // ================
     
     $(window).on('scroll', () => { // Applies nav bar styling when user navigates beyond hero
         return $(window).scrollTop() > 10 ? $(".nav-wrap").addClass("shadow") : $(".nav-wrap").removeClass("shadow");
@@ -242,6 +250,10 @@ $(document).ready(function() {
     };
     
     animateNavLines()
+
+    // ==============
+    // SKILLS SECTION
+    // ==============
     
     function hideElements(bucketTarget, buckets){
     
@@ -332,6 +344,11 @@ $(document).ready(function() {
     
     showDetails();
 
+
+    // ===============
+    // CONTACT SECTION
+    // ===============
+
     let count = 0
     let bodyEl = document.getElementById('email-body')
 
@@ -384,7 +401,8 @@ $(document).ready(function() {
 
     $('.send-email').on('click', sendEmail);
 
-
-    console.log(Boolean(''))
+    $('.project').css({
+        left: 500
+    })
 
 });

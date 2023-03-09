@@ -511,6 +511,8 @@ body {
                     position: relative;
                     align-self: center;
                     max-width: 500px;
+                    left: 0px; // -500, 0, 500
+                    transition: left 1s;
                     p {
                         color: #fff;
                     }
@@ -529,10 +531,10 @@ body {
                         }
                     }
                     &.hmail{
-                        opacity: 0;
+                        opacity: 10%;
                     }
                     &.chess {
-                        opacity: 0;
+                        opacity: 10%;
                     }
                     &.calculator {
                         opacity: 100;

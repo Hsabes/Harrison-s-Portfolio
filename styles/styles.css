@@ -673,6 +673,9 @@ body {
       -ms-grid-row-align: center;
       align-self: center;
   max-width: 500px;
+  left: 0px;
+  -webkit-transition: left 1s;
+  transition: left 1s;
 }
 .projects-sect .container .wrap .projects-container .project p {
   color: #fff;
@@ -696,10 +699,10 @@ body {
   text-transform: uppercase;
 }
 .projects-sect .container .wrap .projects-container .project.hmail {
-  opacity: 0;
+  opacity: 10%;
 }
 .projects-sect .container .wrap .projects-container .project.chess {
-  opacity: 0;
+  opacity: 10%;
 }
 .projects-sect .container .wrap .projects-container .project.calculator {
   opacity: 100;
