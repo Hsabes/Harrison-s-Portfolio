@@ -81,6 +81,38 @@ body {
             width: 30px;
         }
     }
+    .arrow-left {
+        height: 50px;
+        width: 50px;
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+        transform: rotate(-45deg);
+        cursor: pointer;
+        transition: border-color .5s;
+        &:hover {
+            border-color: #3BCEFF;
+        }
+        @media screen and (max-width: 820px){
+            height: 30px;
+            width: 30px;
+        }
+    }
+    .arrow-right {
+        height: 50px;
+        width: 50px;
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+        transform: rotate(135deg);
+        cursor: pointer;
+        transition: border-color .5s;
+        &:hover {
+            border-color: #3BCEFF;
+        }
+        @media screen and (max-width: 820px){
+            height: 30px;
+            width: 30px;
+        }
+    }
 }
 
 // Bounces nav items
@@ -325,6 +357,7 @@ body {
         .resume {
             max-width: 160px; 
             top: 50px;
+            color: #fff;
             position: relative;
             text-decoration: none;
             text-transform: uppercase;
@@ -458,6 +491,57 @@ body {
     position: relative;
     top: 1600px;
     text-align: center;
+    .container {
+        .wrap {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px;
+            .next {
+                .carousel-arrow {
+                    align-self: center;
+                }
+            }
+            .projects-container {
+                padding: 50px 0;
+                display: flex;
+                justify-content: center;
+                border: 2px solid white;
+                width: 80%;
+                .project {
+                    position: relative;
+                    align-self: center;
+                    max-width: 500px;
+                    p {
+                        color: #fff;
+                    }
+                    .title {
+                        font-size: 25px;
+                    }
+                    .links {
+                        display: flex;
+                        justify-content: center;
+                        gap: 5px;
+                        .btn {
+                            color: #fff;
+                            padding: 2px;
+                            text-decoration: none;
+                            text-transform: uppercase;
+                        }
+                    }
+                    &.hmail{
+                        opacity: 0;
+                    }
+                    &.chess {
+                        opacity: 0;
+                    }
+                    &.calculator {
+                        opacity: 100;
+                        
+                    }
+                }
+            }
+        }
+    }
 }
 
 .contact-sect {
@@ -496,7 +580,7 @@ body {
             .btn {
                 margin: 10px auto;
                 cursor: pointer;
-                width: 100px;
+                width: 120px;
                 padding: 10px 0;
                 font: {
                     size: 13px;

@@ -385,5 +385,6 @@ $(document).ready(function() {
     $('.send-email').on('click', sendEmail);
 
 
+    console.log(Boolean(''))
 
 });
