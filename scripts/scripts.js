@@ -422,7 +422,7 @@ $(document).ready(function() {
             if (count === 2){
 
                 projects.css({
-                    left: '29.5%'
+                    left: '29.87%'
                 });
 
                 $('.arrow-right').css({
@@ -438,7 +438,7 @@ $(document).ready(function() {
 
             } else if (count === 1){
                 projects.css({
-                    left: '-2%'
+                    left: '-1.5%'
                 });
 
                 $('.carousel-arrow').css({

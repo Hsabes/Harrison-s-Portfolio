@@ -295,6 +295,7 @@ body {
 }
 
 .btn {
+  z-index: 10;
   border: 0 solid;
   -webkit-box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
           box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
@@ -687,9 +688,19 @@ body {
     font-size: 20px;
   }
 }
+@media screen and (max-width: 500px) {
+  .projects-sect .container .wrap .projects-container .project .title {
+    font-size: 15px;
+  }
+}
 @media screen and (max-width: 1000px) {
   .projects-sect .container .wrap .projects-container .project .desc {
     font-size: 12px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .projects-sect .container .wrap .projects-container .project .desc {
+    font-size: 10px;
   }
 }
 .projects-sect .container .wrap .projects-container .project .links {
