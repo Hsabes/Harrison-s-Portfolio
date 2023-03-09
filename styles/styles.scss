@@ -1,4 +1,4 @@
-body {
+body, html {
     background-color: #000;
     margin: 0px;
     padding: 0px;
@@ -575,7 +575,7 @@ body {
     position: relative;
     top: 2800px;
     text-align: center;
-    margin-bottom: 5500px;
+    margin-bottom: 5000px;
     .container {
         .desc {
             text-transform: uppercase;
