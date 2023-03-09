@@ -82,6 +82,7 @@ body {
         }
     }
     .arrow-left {
+        z-index: 10;
         height: 50px;
         width: 50px;
         border-right: 2px solid white;
@@ -98,6 +99,7 @@ body {
         }
     }
     .arrow-right {
+        z-index: 10;
         height: 50px;
         width: 50px;
         border-right: 2px solid white;
@@ -494,8 +496,7 @@ body {
     .container {
         .wrap {
             display: flex;
-            justify-content: space-between;
-            padding: 50px;
+            justify-content: center;
             max-width: none;
             .next {
                 .carousel-arrow {
@@ -506,31 +507,25 @@ body {
                 padding: 25px 0;
                 display: flex;
                 justify-content: center;
-                border: 2px solid white;
-                overflow-y: visible;
-                .pagination-container {
-                    position: absolute;
-                    display: flex;
-                    justify-content: center;
-                    gap: 10px;
-                    .dot {
-                        height: 5px;
-                        width: 5px;
-                        border-radius: 50%;
-                        background-color: #fff;
-                    }
-                }
                 .project {
                     position: relative;
                     align-self: center;
-                    max-width: 500px;
                     cursor: default;
                     margin-top: 10px;
+                    left: -1.5%;
                     p {
                         color: #fff;
                     }
                     .title {
                         font-size: 25px;
+                        @media screen and (max-width: 1000px){
+                            font-size: 20px;
+                        }
+                    }
+                    .desc {
+                        @media screen and (max-width: 1000px){
+                            font-size: 12px;
+                        }
                     }
                     .links {
                         display: flex;
@@ -546,15 +541,21 @@ body {
                 }
                 .hmail{ // 2
                     opacity: 0;
+                    margin: 0 -20%;
                     transition: left 1s, opacity .5s;
+
                 }
                 .calculator { // 1
-                    opacity: 100;  
+                    opacity: 100; 
+                    margin: 0 -20%;
                     transition: left 1s, opacity .5s;
+
                 }
                 .chess { // 0
                     opacity: 0;
+                    margin: 0 -20%;
                     transition: left 1s, opacity .5s;
+
                 }
             }
         }

@@ -422,7 +422,7 @@ $(document).ready(function() {
             if (count === 2){
 
                 projects.css({
-                    left: '33%'
+                    left: '29.5%'
                 });
 
                 $('.arrow-right').css({
@@ -434,10 +434,11 @@ $(document).ready(function() {
 
                 calculator.style.opacity = '0'
                 chess.style.opacity = '0'
-            }
-            if (count === 1){
+
+
+            } else if (count === 1){
                 projects.css({
-                    left: '0px'
+                    left: '-2%'
                 });
 
                 $('.carousel-arrow').css({
@@ -449,10 +450,9 @@ $(document).ready(function() {
 
                 chess.style.opacity = '0'
                 hmail.style.opacity = '0'
-            }
-            if (count === 0){
+            } else if (count === 0){
                 projects.css({
-                    left: '-33%'
+                    left: '-31.5%'
                 });
 
                 $('.arrow-left').css({
@@ -462,8 +462,10 @@ $(document).ready(function() {
 
                 chess.style.opacity = '100'
 
+
                 hmail.style.opacity = '0'
                 calculator.style.opacity = '0'
+
 
             }
 
