@@ -251,6 +251,19 @@ $(document).ready(function() {
     // ==============
     // SKILLS SECTION
     // ==============
+
+    function showAllBuckets(){
+        let buckets = Array.from(document.querySelectorAll('.skills-logo'))
+        let tempBtn = document.querySelector('.test')
+        
+        tempBtn.addEventListener('click', () => {
+            buckets.map((bucket) => {
+                bucket.style.opacity === 100 ? bucket.style.opacity = 0 : bucket.style.opacity = 100
+            })
+        })
+    }
+
+    showAllBuckets()
     
     function hideElements(bucketTarget, buckets){
     
@@ -275,6 +288,8 @@ $(document).ready(function() {
                 element.style.opacity = '100'; // Sets opacity of title/desc/exit
             })
         }, 500)
+
+
     
         function resetGrid(bucketTarget, targetImg, targetContainer, targetChildren, bucketsToHide, e){
             e?.stopPropagation(); // Prevents event bubbling, optional chaining for up-arrow click

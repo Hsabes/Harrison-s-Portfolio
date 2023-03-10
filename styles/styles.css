@@ -21,6 +21,10 @@ html, body {
   }
 }
 
+.show-tiles {
+  border-color: red;
+}
+
 .desc {
   color: #fff;
   font-family: helvetica, sans-serif;
