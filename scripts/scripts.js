@@ -258,7 +258,7 @@ $(document).ready(function() {
         
         tempBtn.addEventListener('click', () => {
             buckets.map((bucket) => {
-                bucket.style.opacity === 100 ? bucket.style.opacity = 0 : bucket.style.opacity = 100
+                return !bucket.style.opacity ? bucket.style.opacity = 100 : bucket.style.opacity = ''
             })
         })
     }
