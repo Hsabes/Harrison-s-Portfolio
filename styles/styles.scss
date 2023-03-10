@@ -4,7 +4,8 @@ html, body  {
     padding: 0px;
     overflow: hidden;
     position: relative;
-    height: 100%;
+    touch-action: none;
+    -ms-touch-action: none;
 }
 
 // Text Styling
