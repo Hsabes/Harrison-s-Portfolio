@@ -502,6 +502,7 @@ html, body {
 }
 .skills-grid .container .header {
   font-size: 30px;
+  margin-top: -5px;
 }
 .skills-grid .container .wrap {
   display: -webkit-box;
@@ -646,6 +647,7 @@ html, body {
   text-align: center;
 }
 .projects-sect .container .title {
+  margin-top: -5px;
   font-size: 30px;
 }
 .projects-sect .container .wrap {
