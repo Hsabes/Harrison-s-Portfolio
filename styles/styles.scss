@@ -186,7 +186,6 @@ html, body  {
 .rotateNeg {
     transform: rotate(-45deg);
     margin-top: -3px !important;
-    
 }
 
 // Link styling
@@ -383,7 +382,7 @@ html, body  {
     .container {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        // gap: 40px;
         align-items: center;
         @media screen and (max-width: 820px){
             gap: 10px;
@@ -505,7 +504,6 @@ html, body  {
                 }
             }
             .projects-container {
-                padding: 25px 0;
                 display: flex;
                 justify-content: center;
                 .project {
@@ -514,7 +512,7 @@ html, body  {
                     cursor: default;
                     margin-top: 10px;
                     left: -1.5%;
-                    p {
+                    p, small{
                         color: #fff;
                     }
                     .title {
@@ -551,20 +549,17 @@ html, body  {
                     // left: -500px;
                     margin: 0 -20%;
                     transition: left 1s, opacity .5s;
-
                 }
                 .calculator { // 1
                     opacity: 100; 
                     margin: 0 -20%;
                     transition: left 1s, opacity .5s;
-
                 }
                 .chess { // 0
                     opacity: 0;
                     // left: 500px;
                     margin: 0 -20%;
                     transition: left 1s, opacity .5s;
-
                 }
             }
         }

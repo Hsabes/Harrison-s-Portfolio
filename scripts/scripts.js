@@ -114,7 +114,7 @@ $(document).ready(function() {
         $(".to-intro").on('click', function(e) { // ANY DIRECTION ARROW THAT GOES TO INTRO
             $('.skills-grid, .projects-sect, .contact-sect').animate({ // FADE OUT ANYTHING THAT ISNT HERO SECTION
                 opacity: 0,
-            }, 500);
+            }, 500)
             $('.hero').css({ // SHOW HERO
                 opacity: 100,
             });
@@ -136,7 +136,7 @@ $(document).ready(function() {
         $(".to-contact").on('click', function(e) { // ANY DIRECTION ARROW THAT GOES TO CONTACT
             $('.skills-grid, .projects-sect, .hero').animate({ // FADE OUT ANYTHING THAT ISNT CONTACT SECTION
                 opacity: 0,
-            }, 500);
+            }, 500)
             $('.contact-sect').css({ // SHOW CONTACT
                 opacity: 100,
             });
