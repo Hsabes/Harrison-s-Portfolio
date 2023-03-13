@@ -38,6 +38,10 @@ html, body {
   }
 }
 
+.move-slider {
+  margin-left: 32px;
+}
+
 ::-moz-selection {
   background-clip: text;
   -webkit-background-clip: text;
@@ -507,6 +511,35 @@ html, body {
 .skills-grid .container .header {
   font-size: 30px;
   margin-top: -5px;
+}
+.skills-grid .container .toggle-skills {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid white;
+  width: 50px;
+  height: 20px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  padding: 0 1px;
+  -webkit-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+}
+.skills-grid .container .toggle-skills:hover {
+  background-color: #393939;
+}
+.skills-grid .container .toggle-skills .slider {
+  position: relative;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: #3BCEFF;
+  -webkit-transition: margin-left 0.25s;
+  transition: margin-left 0.25s;
 }
 .skills-grid .container .wrap {
   display: -webkit-box;

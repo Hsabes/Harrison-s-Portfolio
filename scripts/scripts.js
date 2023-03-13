@@ -254,13 +254,16 @@ $(document).ready(function() {
 
     function showAllBuckets(){
         let buckets = Array.from(document.querySelectorAll('.skills-logo'))
-        let tempBtn = document.querySelector('.test')
+        let btn = document.querySelector('.toggle-skills')
         
-        tempBtn.addEventListener('click', () => {
+        btn.addEventListener('click', () => {
             buckets.map((bucket) => {
                 return !bucket.style.opacity ? bucket.style.opacity = 100 : bucket.style.opacity = ''
             })
+            $('.slider').toggleClass('move-slider')
         })
+
+
     }
 
     showAllBuckets()
