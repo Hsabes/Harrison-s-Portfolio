@@ -349,7 +349,6 @@ html, body  {
         }
     }
     .mobile-nav {
-        
         box-sizing: border-box;
         z-index: 15;
         margin-top: 100px;
@@ -361,9 +360,11 @@ html, body  {
         transition: top 1s;
         background-color: #00000050;
         text-align: center;
+        display: flex;
+        flex-direction: column;
         .link {
             margin-top: 10px;
-            display: block;
+            // display: inline-block;
             &:hover {
                 &:after {
                     width: 100%;

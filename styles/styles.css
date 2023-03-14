@@ -469,10 +469,16 @@ html, body {
   transition: top 1s;
   background-color: rgba(0, 0, 0, 0.3137254902);
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .navigation .mobile-nav .link {
   margin-top: 10px;
-  display: block;
 }
 .navigation .mobile-nav .link:hover:after {
   width: 100%;
