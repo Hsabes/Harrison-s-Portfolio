@@ -239,7 +239,7 @@ $(document).ready(function() {
         
         $('.about-me, .skills, .projects, .contact').on('click', function(){
             $('.mobile-nav').css({
-                top: '-100vh'
+                top: '-113vh'
             })
 
             $('.one').removeClass('rotatePos')
@@ -263,7 +263,7 @@ $(document).ready(function() {
                 }).addClass('is-active')
             } else {
                 $('.mobile-nav').css({
-                    top: '-100vh',
+                    top: '-113vh',
 
                 }).removeClass('is-active')
 

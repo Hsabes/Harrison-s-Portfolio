@@ -300,7 +300,6 @@ html, body  {
         max-width: none;
         padding: 0px;
         width: 100%;
-        backdrop-filter: blur(3px);
         z-index: 16;
         transition: all 1s;
         .navigation-items {
@@ -356,12 +355,13 @@ html, body  {
         backdrop-filter: blur(3px);
         width: 100vw;
         height: 100vh;
-        top: -100vh;
-        transition: top 1s;
+        top: -113vh;
+        transition: top 1.5s;
         background-color: #00000050;
         text-align: center;
         display: flex;
         flex-direction: column;
+        border-bottom: 1px solid #fff;
         .link {
             margin-top: 10px;
             animation-name: none;

@@ -395,8 +395,6 @@ html, body {
   max-width: none;
   padding: 0px;
   width: 100%;
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
   z-index: 16;
   -webkit-transition: all 1s;
   transition: all 1s;
@@ -464,9 +462,9 @@ html, body {
           backdrop-filter: blur(3px);
   width: 100vw;
   height: 100vh;
-  top: -100vh;
-  -webkit-transition: top 1s;
-  transition: top 1s;
+  top: -113vh;
+  -webkit-transition: top 1.5s;
+  transition: top 1.5s;
   background-color: rgba(0, 0, 0, 0.3137254902);
   text-align: center;
   display: -webkit-box;
@@ -476,6 +474,7 @@ html, body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border-bottom: 1px solid #fff;
 }
 .navigation .mobile-nav .link {
   margin-top: 10px;
