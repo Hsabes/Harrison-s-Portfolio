@@ -234,6 +234,19 @@ $(document).ready(function() {
 
             removeAnimation()
         });
+
+
+        
+        $('.about-me, .skills, .projects, .contact').on('click', function(){
+            $('.mobile-nav').css({
+                top: '-100vh'
+            })
+
+            $('.one').removeClass('rotatePos')
+            $('.two').removeClass('rotateNeg')
+            $('.three').show()
+        })
+
     };
     
     animateScroll()
@@ -243,7 +256,24 @@ $(document).ready(function() {
             $('.one').toggleClass("rotatePos");
             $('.two').toggleClass("rotateNeg");
             $('.three').toggle();
+
+            if (!$('.mobile-nav').hasClass('is-active')){
+                $('.mobile-nav').css({
+                    top: '0',
+                }).addClass('is-active')
+            } else {
+                $('.mobile-nav').css({
+                    top: '-100vh',
+
+                }).removeClass('is-active')
+
+                $('.one').removeClass('rotatePos')
+                $('.two').removeClass('rotateNeg')
+                $('.three').show()
+            }
+
         });
+
     };
     
     animateNavLines()

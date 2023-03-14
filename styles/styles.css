@@ -42,6 +42,14 @@ html, body {
   margin-left: 32px;
 }
 
+.show-mobile-nav {
+  height: 100vh;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  -webkit-transition: height 1s;
+  transition: height 1s;
+}
+
 ::-moz-selection {
   background-clip: text;
   -webkit-background-clip: text;
@@ -389,7 +397,7 @@ html, body {
   width: 100%;
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
-  z-index: 2;
+  z-index: 16;
   -webkit-transition: all 1s;
   transition: all 1s;
 }
@@ -445,6 +453,39 @@ html, body {
   height: 3px;
   width: 30px;
   margin-top: 5px;
+}
+.navigation .mobile-nav {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 15;
+  margin-top: 100px;
+  position: fixed;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  width: 100vw;
+  height: 100vh;
+  top: -100vh;
+  -webkit-transition: top 1s;
+  transition: top 1s;
+  background-color: rgba(0, 0, 0, 0.3137254902);
+  text-align: center;
+}
+.navigation .mobile-nav .link {
+  margin-top: 10px;
+  display: block;
+}
+.navigation .mobile-nav .link:hover:after {
+  width: 100%;
+}
+.navigation .mobile-nav .link:after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin: 1px auto 0;
+  width: 0%;
+  background-color: #fff;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
 }
 
 .hero {
@@ -538,8 +579,8 @@ html, body {
       -ms-grid-row-align: center;
       align-self: center;
   background-color: #3BCEFF;
-  -webkit-transition: margin-left 0.25s;
-  transition: margin-left 0.25s;
+  -webkit-transition: margin-left 0.5s;
+  transition: margin-left 0.5s;
 }
 .skills-grid .container .wrap {
   display: -webkit-box;

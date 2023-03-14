@@ -25,7 +25,6 @@ html, body  {
 
 .show-tiles {
     border-color: red;
-    // opacity: 100 !important;
 }
 
 .desc {
@@ -43,6 +42,12 @@ html, body  {
 
 .move-slider {
     margin-left: 32px;
+}
+
+.show-mobile-nav {
+    height: 100vh;
+    backdrop-filter: blur(3px);
+    transition: height 1s;
 }
 
 // Highlight Color
@@ -296,7 +301,7 @@ html, body  {
         padding: 0px;
         width: 100%;
         backdrop-filter: blur(3px);
-        z-index: 2;
+        z-index: 16;
         transition: all 1s;
         .navigation-items {
             display: flex;
@@ -340,6 +345,38 @@ html, body  {
                     width: 30px;
                     margin-top: 5px;
                 }
+            }
+        }
+    }
+    .mobile-nav {
+        
+        box-sizing: border-box;
+        z-index: 15;
+        margin-top: 100px;
+        position: fixed;
+        backdrop-filter: blur(3px);
+        width: 100vw;
+        height: 100vh;
+        top: -100vh;
+        transition: top 1s;
+        background-color: #00000050;
+        text-align: center;
+        .link {
+            margin-top: 10px;
+            display: block;
+            &:hover {
+                &:after {
+                    width: 100%;
+                }
+            }
+            &:after {
+                content: '';
+                display: block;
+                height: 1px;
+                margin: 1px auto 0;
+                width: 0%;
+                background-color: #fff;
+                transition: all 500ms;
             }
         }
     }
@@ -419,7 +456,7 @@ html, body  {
                 border-radius: 50%;
                 align-self: center;
                 background-color: #3BCEFF;
-                transition: margin-left .25s;
+                transition: margin-left .5s;
             }
         }
         .wrap {
