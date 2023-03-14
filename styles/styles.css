@@ -476,6 +476,11 @@ html, body {
           flex-direction: column;
   border-bottom: 1px solid #fff;
 }
+@media screen and (min-width: 525px) {
+  .navigation .mobile-nav {
+    display: none;
+  }
+}
 .navigation .mobile-nav .link {
   margin-top: 10px;
   -webkit-animation-name: none;
