@@ -474,7 +474,6 @@ html, body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-bottom: 1px solid #fff;
 }
 @media screen and (min-width: 525px) {
   .navigation .mobile-nav {

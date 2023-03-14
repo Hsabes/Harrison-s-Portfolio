@@ -264,7 +264,6 @@ $(document).ready(function() {
             } else {
                 $('.mobile-nav').css({
                     top: '-125vh',
-
                 }).removeClass('is-active')
 
                 $('.one').removeClass('rotatePos')
