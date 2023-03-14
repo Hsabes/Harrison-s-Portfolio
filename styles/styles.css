@@ -483,6 +483,19 @@ html, body {
 .navigation .mobile-nav .link:hover:after {
   width: 100%;
 }
+.navigation .mobile-nav .link:hover:before {
+  width: 100%;
+}
+.navigation .mobile-nav .link:before {
+  content: "";
+  display: block;
+  height: 1px;
+  margin: 1px auto 0;
+  width: 0%;
+  background-color: #fff;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
 .navigation .mobile-nav .link:after {
   content: "";
   display: block;

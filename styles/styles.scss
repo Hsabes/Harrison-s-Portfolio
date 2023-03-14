@@ -364,11 +364,22 @@ html, body  {
         flex-direction: column;
         .link {
             margin-top: 10px;
-            // display: inline-block;
             &:hover {
                 &:after {
                     width: 100%;
                 }
+                &:before {
+                    width: 100%;
+                }
+            }
+            &:before {
+                content: '';
+                display: block;
+                height: 1px;
+                margin: 1px auto 0;
+                width: 0%;
+                background-color: #fff;
+                transition: all 500ms;
             }
             &:after {
                 content: '';
