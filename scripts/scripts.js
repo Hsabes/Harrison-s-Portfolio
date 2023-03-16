@@ -406,7 +406,7 @@ $(document).ready(function() {
         }
 
         let link = `mailto:${mail.address}?cc=${mail.cc}&subject=${mail.subject}&body=${mail.body}`
-
+        
 
         if (mail.body.length > 0){
             window.location.href = link;
