@@ -402,10 +402,10 @@ $(document).ready(function() {
             address: 'hsabes@gmail.com',
             cc: '',
             subject: encodeURIComponent(document.getElementById('email-subject').value),
-            body: encodeURIComponent(document.getElementById('email-body').value)
+            body: encodeURIComponent(document.getElementById('email-body').value + '\n\n')
         }
 
-        let link = `mailto:${mail.address}?cc=${mail.cc}&subject=${mail.subject}&body=${mail.body}`
+        let link = `mailto:${mail.address}?cc=${mail.cc}&subject=${mail.subject}&body=${mail.body}(Sent from Harrison's Portfolio)`
         
 
         if (mail.body.length > 0){
