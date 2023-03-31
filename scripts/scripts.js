@@ -402,10 +402,10 @@ $(document).ready(function() {
             address: 'hsabes@gmail.com',
             cc: '',
             subject: encodeURIComponent(document.getElementById('email-subject').value),
-            body: encodeURIComponent(document.getElementById('email-body').value + '\n\n')
+            body: encodeURIComponent(document.getElementById('email-body').value)
         }
 
-        let link = `mailto:${mail.address}?cc=${mail.cc}&subject=${mail.subject}&body=${mail.body}(Sent from Harrison's Portfolio)`
+        let link = `mailto:${mail.address}?cc=${mail.cc}&subject=${mail.subject}&body=${mail.body}`
         
 
         if (mail.body.length > 0){
@@ -428,20 +428,19 @@ $(document).ready(function() {
 
             }
         }
-
-
-
-        $('#email-body').on('input', () => {
-            if (bodyEl.style.borderColor === 'red'){ // To prevent unecessary event handling
-                bodyEl.style.borderColor = 'white'
-            }
-            count = 0
-            bodyEl.placeholder = "Body";
-            bodyEl.style.borderColor = 'white';
-            $('#email-body').removeClass('error');
-        })
-
     }
+
+    $('#email-body').on('input', () => {
+        if (bodyEl.style.borderColor === 'red'){ // To prevent unecessary event handling
+            bodyEl.style.borderColor = 'white'
+        }
+        console.log(1)
+
+        count = 0
+        bodyEl.placeholder = "Body";
+        bodyEl.style.borderColor = 'white';
+        $('#email-body').removeClass('error');
+    })
 
     $('.send-email').on('click', sendEmail);
 
