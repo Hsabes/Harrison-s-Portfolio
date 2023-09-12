@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+    // ================
+    // ABOUT ME SECTION
+    // ================
+
     // CODE FOR ROTATING THE LAST WORD OF HTML TEXT
     function rotateTitle() {
         let titleArray = ["I'm a problem solver.", "I'm a disc golfer.", "I'm a guitarist.", "I'm a cat dad.", "I'm a developer"];
@@ -19,7 +23,7 @@ $(document).ready(function() {
             "When I'm not working or doing things in my spare time, I spend a fair amount of my free time either solving Kata on CodeWars or writing some of my own. I do this so I can consistently improve on my ability to write creative custom code for unique problems.",
             "Currently my favorite hobby is to disc golf. It's an incredible sport that facilitates social interaction, exercise, and an appreciation for the beauty of nature. My future plan is to travel the world and play some of the most famous courses around the globe.",
             "I have a bachelors degree in Guitar from Berklee College of Music and have been playing the guitar since elementary school. My favorite genres to listen to are EDM, blues, and instrumental rock and I love playing BB King style blues on my Fender Strat.",
-            "I have a standard issue cat named Smitty who is currently four years old and has never done anything or anyone wrong. He loves playing with his wand toys, crinkling plastic (particularly at 3AM), and crab walking as an attempt to intimidate the vacuum cleaner.",
+            "I have a standard issue cat named Smitty who is currently four years old and has never done anything or anyone wrong. He loves playing with his wand toys, crinkling plastic (particularly at 3AM), and crab walking in an attempt to intimidate the vacuum cleaner.",
             "I started coding in May of 2022 when I began studying at Flatiron School's Software Engineering program. I have a passion for finding creative solutions and I consistently exercise this passion through algorithms and project building. View my resume below."
         ];
         let count = 0;
@@ -32,13 +36,23 @@ $(document).ready(function() {
     }
     
     rotateDesc()
+
+    // ================
+    // NAVIGATION LOGIC
+    // ================
     
     $(window).on('scroll', () => { // Applies nav bar styling when user navigates beyond hero
         return $(window).scrollTop() > 10 ? $(".nav-wrap").addClass("shadow") : $(".nav-wrap").removeClass("shadow");
     })
 
     function isUpOrDown(element){ // Adjusts scroll speed if use goes up or down
-        return element.hasClass('arrow-up') ? 1000 : 2000;
+        return element.hasClass('arrow-up') ? 1000 : 1500;
+    }
+
+    function removeAnimation(){
+        setTimeout(() => {
+            $('.about-me, .skills, .projects, .contact').removeClass('animate')
+        }, 500)
     }
     
     function animateScroll(){
@@ -63,15 +77,12 @@ $(document).ready(function() {
                 $('.about-me, .projects, .contact').removeClass('animate')
             }
 
-            setTimeout(() => {
-                $('.about-me, .skills, .projects, .contact').removeClass('animate')
-            }, 500)
-
             $('.active').css({
                 right: '348px'
             })
 
-            console.log(e.target)
+            removeAnimation()
+
         });
         $(".to-projects").on('click', function(e) { // ANY DIRECTION ARROW THAT GOES TO PROJECTS
             $('.skills-grid, .contact-sect, .hero').animate({ // FADE OUT ANYTHING THAT ISNT PROJECTS
@@ -93,18 +104,17 @@ $(document).ready(function() {
                 $('.about-me, .skills, .contact').removeClass('animate')
             }
 
-            setTimeout(() => {
-                $('.about-me, .skills, .projects, .contact').removeClass('animate')
-            }, 500)
-
             $('.active').css({
                 right: '255px'
             })
+
+            removeAnimation()
+            
         });
         $(".to-intro").on('click', function(e) { // ANY DIRECTION ARROW THAT GOES TO INTRO
             $('.skills-grid, .projects-sect, .contact-sect').animate({ // FADE OUT ANYTHING THAT ISNT HERO SECTION
                 opacity: 0,
-            }, 500);
+            }, 500)
             $('.hero').css({ // SHOW HERO
                 opacity: 100,
             });
@@ -116,18 +126,17 @@ $(document).ready(function() {
             $('.about-me').addClass('animate');
             $('.projects, .skills, .contact').removeClass('animate')
 
-            setTimeout(() => {
-                $('.about-me, .skills, .projects, .contact').removeClass('animate')
-            }, 500)
-
             $('.active').css({
                 right: '477px'
             })
+
+            removeAnimation()
+
         });
         $(".to-contact").on('click', function(e) { // ANY DIRECTION ARROW THAT GOES TO CONTACT
             $('.skills-grid, .projects-sect, .hero').animate({ // FADE OUT ANYTHING THAT ISNT CONTACT SECTION
                 opacity: 0,
-            }, 500);
+            }, 500)
             $('.contact-sect').css({ // SHOW CONTACT
                 opacity: 100,
             });
@@ -140,13 +149,12 @@ $(document).ready(function() {
                 $('.skills, .about-me, .contact').removeClass('animate')
             }
 
-            setTimeout(() => {
-                $('.about-me, .skills, .projects, .contact').removeClass('animate')
-            }, 500)
-
             $('.active').css({
                 right: '124px'
             })
+
+            removeAnimation()
+
         });
 
         // NAVIGATION ITEMS
@@ -162,6 +170,12 @@ $(document).ready(function() {
             }, 750);
             $('.about-me').addClass('animate');
             $('.projects, .skills, .contact').removeClass('animate')
+
+            $('.active').css({
+                right: '477px'
+            })
+
+            removeAnimation()
         });
         $(".skills").on('click', function() { // GO TO SKILLS
             $('.hero, .projects-sect, .contact-sect').animate({ // FADE OUT EVERYTHING THAT ISNT SKILLS
@@ -175,6 +189,12 @@ $(document).ready(function() {
             }, 750);
             $('.skills').addClass('animate')
             $('.about-me, .projects, .contact').removeClass('animate')
+
+            $('.active').css({
+                right: '348px'
+            })
+
+            removeAnimation()
         });
         $(".projects").on('click', function() { // GO TO PROJECTS SECTION
             $('.hero, .skills-grid, .contact-sect').animate({ // FADE OUT EVERYTHING THAT ISN'T PROJECTS SECTION
@@ -188,6 +208,12 @@ $(document).ready(function() {
             }, 750);
             $('.projects').addClass('animate');
             $('.about-me, .skills, .contact').removeClass('animate')
+
+            $('.active').css({
+                right: '255px'
+            })
+
+            removeAnimation()
         });
         $(".contact").on('click', function() { // GO TO CONTACT SECTION
             $('.hero, .skills-grid, .projects-sect').animate({ // FADE OUT EVERYTHING THAT ISN'T CONTACT SECTION
@@ -201,7 +227,26 @@ $(document).ready(function() {
             }, 750);
             $('.contact').addClass('animate');
             $('.about-me, .skills, .projects').removeClass('animate')
+
+            $('.active').css({
+                right: '124px'
+            })
+
+            removeAnimation()
         });
+
+
+        
+        $('.about-me, .skills, .projects, .contact').on('click', function(){
+            $('.mobile-nav').css({
+                top: '-125vh'
+            })
+
+            $('.one').removeClass('rotatePos')
+            $('.two').removeClass('rotateNeg')
+            $('.three').show()
+        })
+
     };
     
     animateScroll()
@@ -211,10 +256,46 @@ $(document).ready(function() {
             $('.one').toggleClass("rotatePos");
             $('.two').toggleClass("rotateNeg");
             $('.three').toggle();
+
+            if (!$('.mobile-nav').hasClass('is-active')){
+                $('.mobile-nav').css({
+                    top: '0',
+                }).addClass('is-active')
+            } else {
+                $('.mobile-nav').css({
+                    top: '-125vh',
+                }).removeClass('is-active')
+
+                $('.one').removeClass('rotatePos')
+                $('.two').removeClass('rotateNeg')
+                $('.three').show()
+            }
+
         });
+
     };
     
     animateNavLines()
+
+    // ==============
+    // SKILLS SECTION
+    // ==============
+
+    function showAllBuckets(){
+        let buckets = Array.from(document.querySelectorAll('.skills-logo'))
+        let btn = document.querySelector('.toggle-skills')
+        
+        btn.addEventListener('click', () => {
+            buckets.map((bucket) => {
+                return !bucket.style.opacity ? bucket.style.opacity = 100 : bucket.style.opacity = ''
+            })
+            $('.slider').toggleClass('move-slider')
+        })
+
+
+    }
+
+    showAllBuckets()
     
     function hideElements(bucketTarget, buckets){
     
@@ -239,6 +320,8 @@ $(document).ready(function() {
                 element.style.opacity = '100'; // Sets opacity of title/desc/exit
             })
         }, 500)
+
+
     
         function resetGrid(bucketTarget, targetImg, targetContainer, targetChildren, bucketsToHide, e){
             e?.stopPropagation(); // Prevents event bubbling, optional chaining for up-arrow click
@@ -306,10 +389,14 @@ $(document).ready(function() {
     showDetails();
 
 
-    function sendEmail() {
+    // ===============
+    // CONTACT SECTION
+    // ===============
 
-        let bodyEl = document.getElementById('email-body')
-        let subjEl = document.getElementById('email-subject')
+    let count = 0
+    let bodyEl = document.getElementById('email-body')
+
+    function sendEmail(e) {
 
         let mail = {
             address: 'hsabes@gmail.com',
@@ -319,28 +406,121 @@ $(document).ready(function() {
         }
 
         let link = `mailto:${mail.address}?cc=${mail.cc}&subject=${mail.subject}&body=${mail.body}`
+        
 
         if (mail.body.length > 0){
             window.location.href = link;
-            bodyEl.placeholder = "Body";
-            bodyEl.style.borderColor = 'white';
-            $('#email-body').removeClass('error');
         } else {
-            bodyEl.placeholder = "Unfortunately, I am not a mind reader. Please include a body for your email!";
             bodyEl.style.borderColor = 'red';
             $('#email-body').addClass('error');
-        }
+            setTimeout(() => {
+                $('#email-body').removeClass('error');
+            }, 250)
+            count++
+            switch (count){
+                case 1: return bodyEl.placeholder = "Uh oh, looks like you forgot to include a body for your email!"; break;
+                case 2: return bodyEl.placeholder = "The animation is fun, right?"; break;
+                case 5: return bodyEl.placeholder = "Okay, you can stop now."; break;
+                case 9: return bodyEl.placeholder = "Really rude."; break;
+                case 14: return bodyEl.placeholder = "STOP."; break;
+                case 20: return bodyEl.placeholder = "(╯°□°)╯︵ ┻━┻"; break;
+                case 25: return count = 0; break;
 
-        $('#email-body').on('input', () => {
-            if (bodyEl.style.borderColor === 'red'){ // To prevent unecessary event handling
-                bodyEl.style.borderColor = 'white'
             }
+        }
+    }
+
+    $('#email-body').on('input', () => {
+        if (bodyEl.style.borderColor === 'red'){ // To prevent unecessary event handling
+            bodyEl.style.borderColor = 'white'
+        }
+        console.log(1)
+
+        count = 0
+        bodyEl.placeholder = "Body";
+        bodyEl.style.borderColor = 'white';
+        $('#email-body').removeClass('error');
+    })
+
+    $('.send-email').on('click', sendEmail);
+
+    function navigateProjects(){
+        let projects = $('.project')
+        let count = 1
+
+        let hmail = document.querySelector('.hmail')
+        let chess = document.querySelector('.chess')
+        let calculator = document.querySelector('.calculator')
+        
+        $('.carousel-arrow').on('click', function() {
+            if ($(this).hasClass('arrow-left')){
+                if (count > 0){
+                    count--
+                    console.log(count)
+                }
+            } else {
+                if (count < 2){
+                    count++
+                    console.log(count)
+                }
+            }
+
+            if (count === 2){
+
+                projects.css({
+                    left: '29.87%'
+                });
+
+                $('.arrow-right').css({
+                    opacity: 0,
+                    pointerEvents: 'none'
+                })
+
+                hmail.style.opacity = '100'
+
+                calculator.style.opacity = '0'
+                chess.style.opacity = '0'
+
+
+            } else if (count === 1){
+                projects.css({
+                    left: '-1.5%'
+                });
+
+                $('.carousel-arrow').css({
+                    opacity: 100,
+                    pointerEvents: 'auto'
+                })
+
+                calculator.style.opacity = '100'
+
+                chess.style.opacity = '0'
+                hmail.style.opacity = '0'
+            } else if (count === 0){
+                projects.css({
+                    left: '-31.5%'
+                });
+
+                $('.arrow-left').css({
+                    opacity: 0,
+                    pointerEvents: 'none'
+                })
+
+                chess.style.opacity = '100'
+
+
+                hmail.style.opacity = '0'
+                calculator.style.opacity = '0'
+
+
+            }
+
+
+
         })
 
     }
 
-    $('.send-email').on('click', sendEmail);
-
-
+    navigateProjects();
 
 });
